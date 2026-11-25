@@ -3,62 +3,173 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>حُفرة (Hufra) — مساعد سيرفر الديسكورد بالذكاء الاصطناعي | تحميل</title>
-<meta name="description" content="حُفرة: برنامج ويندوز عربي تكتب فيه اللي تبيه ويجهّز لك رومات ورتب وصلاحيات سيرفر الديسكورد. تحميل مجاني.">
+<title>حُفرة — سيرفر ديسكورد جاهز بجملة واحدة | تحميل لويندوز</title>
+<meta name="description" content="حُفرة: برنامج ويندوز عربي. اكتب اللي تبيه ويجهّز لك رومات ورتب وصلاحيات سيرفر الديسكورد، وتراجع الخطة قبل التنفيذ. تحميل مجاني.">
+<meta name="theme-color" content="#1B150E">
 <link rel="icon" href="logo.png">
-<meta property="og:title" content="حُفرة — مساعد سيرفر الديسكورد">
+<meta property="og:title" content="حُفرة — سيرفر ديسكورد جاهز بجملة واحدة">
 <meta property="og:description" content="اكتب اللي تبيه بالعربي ويجهّز لك سيرفرك. تحميل مجاني لويندوز.">
+<meta property="og:image" content="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f7f0e6;--ink:#2e1b10;--brown:#7a4423;--gold:#d9a877;--card:#fff;--line:#e5ddd0}
-@media(prefers-color-scheme:dark){:root{--bg:#20120a;--ink:#f7f0e6;--card:#33200f;--line:#4a2b18}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.8}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
-.hero{padding:56px 0 36px;text-align:center}
-.hero img{width:112px;height:112px;border-radius:26px}
-h1{font-size:44px;margin:14px 0 4px}.sub{font-size:19px;opacity:.85;margin:0 0 26px}
-.btn{display:inline-block;background:var(--brown);color:#fff;text-decoration:none;font-weight:700;font-size:20px;padding:14px 34px;border-radius:14px}
-.btn:hover{filter:brightness(1.1)}.meta{font-size:13px;opacity:.7;margin-top:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:30px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
-.card h3{margin:0 0 6px;color:var(--brown)}@media(prefers-color-scheme:dark){.card h3{color:var(--gold)}}
-h2{margin-top:36px}ol{padding-inline-start:22px}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-td,th{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line)}a{color:var(--brown)}
-@media(prefers-color-scheme:dark){a{color:var(--gold)}}
-footer{text-align:center;opacity:.7;font-size:13px;padding:34px 0 50px}
+:root{--bg:#1B150E;--bg2:#241b12;--card:#2c2117;--line:#43321f;--ink:#f5ece0;--mute:#b9a78f;--gold:#d9a877;--rust:#b0592b;--rust2:#7a4423}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Tajawal,"Segoe UI",Tahoma,sans-serif;line-height:1.85;font-size:17px}
+a{color:inherit;text-decoration:none}
+.skip{position:absolute;right:-999px}.skip:focus{right:10px;top:10px;background:var(--gold);color:#000;padding:8px 14px;border-radius:8px;z-index:99}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(27,21,14,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}.brand img{width:36px;height:36px;border-radius:10px}
+.links{display:flex;gap:22px;align-items:center;font-size:15px;color:var(--mute)}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--rust);color:#fff;font-weight:700;padding:12px 26px;border-radius:12px;border:1px solid transparent;transition:.2s;font-size:16px}
+.btn:hover{background:#c9682f;transform:translateY(-1px)}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}.btn.ghost:hover{border-color:var(--gold)}
+.btn.big{font-size:19px;padding:15px 36px}
+.hero{text-align:center;padding:84px 0 40px;position:relative;overflow:hidden}
+.hero:before{content:"ح";position:absolute;inset:0;display:grid;place-items:center;font-size:640px;font-weight:800;color:#fff;opacity:.025;pointer-events:none;line-height:1}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--bg2);color:var(--gold);padding:5px 16px;border-radius:99px;font-size:14px;margin-bottom:22px}
+h1{font-size:clamp(38px,7vw,68px);line-height:1.25;margin:0 0 16px;font-weight:800}
+h1 em{font-style:italic;color:var(--gold)}
+.lead{font-size:20px;color:var(--mute);max-width:620px;margin:0 auto 30px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.trust{font-size:14px;color:var(--mute);margin-top:18px}
+section{padding:68px 0}
+.label{color:var(--gold);font-size:14px;font-weight:700;letter-spacing:.5px}
+h2{font-size:clamp(28px,4.5vw,40px);margin:4px 0 30px;font-weight:800}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pane{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.pane h4{margin:0 0 12px;color:var(--gold);font-size:15px}
+.bub{padding:10px 14px;border-radius:14px;margin:8px 0;font-size:15px;max-width:92%}
+.u{background:var(--rust2)}.b{background:#3a2c1e}
+.plan{list-style:none;padding:0;margin:8px 0 0;font-size:14px;color:var(--mute)}.plan li{padding:4px 0;border-bottom:1px dashed var(--line)}
+.tags{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.tags span{border:1px solid var(--line);border-radius:99px;padding:4px 16px;font-size:14px;color:var(--mute)}
+.steps,.cards{display:grid;gap:16px}.steps{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.cards{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card h3{margin:0 0 6px;font-size:19px}.card p{margin:0;color:var(--mute);font-size:15px}
+.num{font-size:34px;font-weight:800;color:var(--rust);display:block;margin-bottom:4px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);border:0;margin:0}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.win{background:#f7f0e6;color:#2e1b10;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.win .bar{background:#3a2113;color:#f7f0e6;padding:8px 14px;font-size:13px;display:flex;gap:6px;align-items:center}.win .bar i{width:10px;height:10px;border-radius:50%;background:#d9a877;display:inline-block}
+.win .body{padding:16px;font-size:14px}.win .row{background:#fff;border:1px solid #e5ddd0;border-radius:10px;padding:8px 12px;margin:6px 0}
+.win .go{display:inline-block;background:#7a4423;color:#fff;border-radius:8px;padding:6px 18px;margin-top:8px}
+.cap{color:var(--mute);font-size:14px;margin-top:8px;text-align:center}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 20px;margin:10px 0}
+summary{cursor:pointer;font-weight:700;font-size:17px}details p{color:var(--mute);margin:10px 0 0}
+.close{text-align:center;background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--line)}
+.close h2{font-size:clamp(32px,6vw,52px)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:15px}
+td,th{padding:10px 16px;text-align:right;border-bottom:1px solid var(--line)}th{color:var(--gold)}td a{color:var(--gold);font-weight:700}
+footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center}
+footer nav,footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer a:hover{color:var(--ink)}
+@media(max-width:720px){.links a.h{display:none}.demo,.shots{grid-template-columns:1fr}.hero{padding-top:56px}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="hero">
-  <img src="logo.png" alt="شعار حُفرة">
-  <h1>حُفرة</h1>
-  <p class="sub">اكتب اللي تبيه بالعربي… ويجهّز لك سيرفر الديسكورد</p>
-  <a id="dl" class="btn" href="https://github.com/ShadowRunnerj/hufra/releases/latest">⬇ تحميل حُفرة لويندوز</a>
-  <div class="meta" id="meta">جاري جلب آخر إصدار…</div>
-</header>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+<nav><div class="wrap">
+  <a class="brand" href="#"><img src="logo.png" alt=""><span>حُفرة</span></a>
+  <div class="links"><a class="h" href="#how">كيف يشتغل</a><a class="h" href="#promises">المميزات</a><a class="h" href="#faq">أسئلة</a><a class="h" href="#versions">الإصدارات</a><a class="btn" href="#get" style="padding:8px 20px;font-size:15px">تحميل</a></div>
+</div></nav>
 
-<div class="grid">
-  <div class="card"><h3>💬 شات بالعربي</h3>اكتب «سوّ لي سيرفر متجر» أو «سوّ رتب: مالك، إدارة، عضو».</div>
-  <div class="card"><h3>🧩 رومات ورتب وصلاحيات</h3>رومات نصية وصوتية، فئات، رتب بألوان، وأقسام خاصة بالإدارة.</div>
-  <div class="card"><h3>✅ تراجع قبل التنفيذ</h3>تشوف الخطة كاملة وتوافق عليها، ولا يتغير شي بدون موافقتك.</div>
-  <div class="card"><h3>🔄 تحديثات من داخل البرنامج</h3>صفحة تنزيل وتحديث بضغطة زر لأي إصدار.</div>
-</div>
+<main id="main">
+<header class="hero"><div class="wrap">
+  <span class="badge">إصدار مجاني لويندوز 10/11</span>
+  <h1>سيرفر ديسكورد جاهز <em>بجملة واحدة</em></h1>
+  <p class="lead">اكتب اللي تبيه بالعربي: رومات، رتب، صلاحيات. حُفرة تجهّز الخطة، وأنت توافق، وهي تنفّذ.</p>
+  <div class="cta" id="get">
+    <a id="dl" class="btn big" href="https://github.com/ShadowRunnerj/hufra/releases/latest">⬇ تحميل حُفرة</a>
+    <a class="btn ghost big" href="https://discord.gg/zcZeDZFwsP">ادخل الديسكورد</a>
+  </div>
+  <div class="trust" id="meta">جاري جلب آخر إصدار…</div>
+</div></header>
 
-<h2>طريقة الاستخدام</h2>
-<ol>
-  <li>حمّل <b>Hufra-Setup.exe</b> وثبّته.</li>
-  <li>ادخل سيرفر الديسكورد وضع مفتاح Gemini عند أول تشغيل.</li>
-  <li>افتح «بوت الديسكورد» واربط البوت بسيرفرك.</li>
-  <li>اكتب اللي تبيه ووافق على الخطة.</li>
-</ol>
-<p><b>ملاحظة:</b> الملف غير موقّع رقمياً، فقد يعرض ويندوز تحذير SmartScreen: اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال».</p>
+<section style="padding-top:30px"><div class="wrap">
+  <div class="demo">
+    <div class="pane"><h4>بدون حُفرة</h4>
+      <div class="bub b">إنشاء رتبة… اختيار لون… ضبط الصلاحيات…</div>
+      <div class="bub b">إنشاء فئة… روم… ترتيبهم واحد واحد…</div>
+      <div class="bub b">ساعات من الضغط والتنقل بين القوائم 😩</div></div>
+    <div class="pane"><h4>مع حُفرة</h4>
+      <div class="bub u">سوّ لي سيرفر متجر</div>
+      <div class="bub b">جهّزت الخطة، راجعها ووافق:</div>
+      <ul class="plan"><li>➕ رتب: مالك · إدارة · مشرف · عميل</li><li>📁 فئات: معلومات · المتجر · المجتمع</li><li>💬 رومات: الترحيب · القوانين · المنتجات</li><li>🔒 قسم إدارة خاص</li></ul></div>
+  </div>
+  <div class="tags"><span>رومات نصية وصوتية</span><span>رتب بألوان</span><span>صلاحيات</span><span>أقسام خاصة</span><span>حذف بتأكيد</span></div>
+</div></section>
 
-<h2>كل الإصدارات</h2>
-<table><thead><tr><th>الإصدار</th><th>التاريخ</th><th>تحميل</th></tr></thead><tbody id="rows"><tr><td colspan="3">جاري التحميل…</td></tr></tbody></table>
+<hr class="divider">
+<section id="how"><div class="wrap">
+  <div class="label">كيف يشتغل</div><h2>ثلاث خطوات</h2>
+  <div class="steps">
+    <div class="card"><span class="num">٠١</span><h3>ثبّت واربط</h3><p>حمّل البرنامج، وادخل الديسكورد، وضع مفتاح Gemini المجاني، واربط البوت بسيرفرك.</p></div>
+    <div class="card"><span class="num">٠٢</span><h3>اكتب اللي تبيه</h3><p>جملة بالعربي زي «سوّ رتب: مالك، إدارة، عضو» أو «سوّ سيرفر ألعاب».</p></div>
+    <div class="card"><span class="num">٠٣</span><h3>راجع ونفّذ</h3><p>تشوف كل خطوة قبل التنفيذ، وتوافق، وتشوف النتيجة في سيرفرك.</p></div>
+  </div>
+</div></section>
 
-<footer>تطوير: BASSAM DEV · <a href="https://discord.gg/zcZeDZFwsP">الدعم على الديسكورد</a> · <a href="https://github.com/ShadowRunnerj/hufra">GitHub</a></footer>
-</div>
+<hr class="divider">
+<section id="promises"><div class="wrap">
+  <div class="label">وعودنا</div><h2>وش يوعدك</h2>
+  <div class="cards">
+    <div class="card"><h3>🗣 يفهم العربي</h3><p>تكتب بلهجتك وبدون أوامر معقدة.</p></div>
+    <div class="card"><h3>✅ ما ينفّذ إلا بموافقتك</h3><p>تعرض لك الخطة كاملة أول، والإلغاء بضغطة.</p></div>
+    <div class="card"><h3>🗑 الحذف بتأكيد</h3><p>أي حذف يطلب منك تأكيد صريح قبل ما يصير.</p></div>
+    <div class="card"><h3>⚠️ ينبّهك للصلاحيات الحساسة</h3><p>يوضح لك أي رتبة تاخذ صلاحيات خطرة، ويرفض منح Administrator.</p></div>
+    <div class="card"><h3>🔐 توكن محفوظ مشفّراً</h3><p>توكن البوت ومفتاحك يُحفظون على جهازك بتشفير حساب ويندوز.</p></div>
+    <div class="card"><h3>🔄 تحديث من داخل البرنامج</h3><p>صفحة تنزيل وتحديث لأي إصدار بضغطة زر.</p></div>
+  </div>
+</div></section>
+
+<hr class="divider">
+<section><div class="wrap">
+  <div class="label">داخل البرنامج</div><h2>مصنوع لمدراء السيرفرات</h2>
+  <div class="shots">
+    <div><div class="win"><div class="bar"><i></i><i></i><i></i>&nbsp; حُفرة — بوت الديسكورد</div><div class="body">
+      <div class="row">🟢 متصل: البوت «حفرة» ← السيرفر «سيرفري»</div>
+      <div class="row" style="background:#7a4423;color:#fff">سوّ رومات: شات عام، صور، أخبار</div>
+      <div class="row">راجع الخطة ثم نفّذ:</div><span class="go">تنفيذ ✅</span></div></div>
+      <div class="cap">الشات والخطة (توضيح تصميمي)</div></div>
+    <div><div class="win"><div class="bar"><i></i><i></i><i></i>&nbsp; حُفرة — التحديثات والتنزيل</div><div class="body">
+      <div class="row"><b>الإصدار المثبّت:</b> 1.0.0</div>
+      <div class="row">🔔 يوجد إصدار أحدث</div>
+      <span class="go">⬇ تحديث لآخر إصدار</span></div></div>
+      <div class="cap">صفحة التحديثات (توضيح تصميمي)</div></div>
+  </div>
+</div></section>
+
+<hr class="divider">
+<section id="faq"><div class="wrap">
+  <div class="label">أسئلة</div><h2>أجوبة سريعة</h2>
+  <details><summary>هل هو مجاني؟</summary><p>نعم، التحميل مجاني. تحتاج مفتاح Gemini، وله باقة مجانية من Google AI Studio.</p></details>
+  <details><summary>لماذا يطلع تحذير SmartScreen؟</summary><p>البرنامج غير موقّع رقمياً. اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال».</p></details>
+  <details><summary>وش لازم أسوي في سيرفري؟</summary><p>أضف البوت للسيرفر، وارفع رتبته فوق الرتب اللي تبيه يديرها من إعدادات السيرفر ← الرتب.</p></details>
+  <details><summary>هل أقدر أتراجع عن خطة؟</summary><p>قبل التنفيذ نعم، تلغيها بدون تغيير. بعد التنفيذ ما فيه تراجع تلقائي، والحذف خصوصاً نهائي.</p></details>
+  <details><summary>وش أنظمة التشغيل المدعومة؟</summary><p>ويندوز 10 و11 (64 بت).</p></details>
+</div></section>
+
+<section id="versions" style="padding-top:20px"><div class="wrap">
+  <div class="label">التحميل</div><h2>كل الإصدارات</h2>
+  <table><thead><tr><th>الإصدار</th><th>التاريخ</th><th>تحميل</th></tr></thead><tbody id="rows"><tr><td colspan="3">جاري التحميل…</td></tr></tbody></table>
+</div></section>
+
+<section class="close"><div class="wrap">
+  <h2>سيرفرك الجاي، بجملة وحدة.</h2>
+  <p class="lead">حمّل حُفرة وجرّبها. وإذا واجهت مشكلة، الدعم على الديسكورد.</p>
+  <div class="cta"><a class="btn big" id="dl2" href="https://github.com/ShadowRunnerj/hufra/releases/latest">⬇ تحميل حُفرة</a><a class="btn ghost big" href="https://discord.gg/zcZeDZFwsP">الدعم على الديسكورد</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <a class="brand" href="#"><img src="logo.png" alt=""><span>حُفرة</span></a>
+  <div class="fl"><a href="#how">كيف يشتغل</a><a href="#faq">أسئلة</a><a href="#versions">الإصدارات</a><a href="https://discord.gg/zcZeDZFwsP">ديسكورد</a><a href="https://github.com/ShadowRunnerj/hufra">GitHub</a></div>
+  <div>© 2026 حُفرة · تطوير BASSAM DEV</div>
+</div></footer>
+
 <script>
 (async()=>{
   try{
@@ -67,10 +178,10 @@ footer{text-align:center;opacity:.7;font-size:13px;padding:34px 0 50px}
     const v=t=>(t.match(/\d+(\.\d+)+/)||['0'])[0].split('.').map(Number);
     all.sort((a,b)=>{const x=v(a.tag_name),y=v(b.tag_name);for(let i=0;i<4;i++){const d=(y[i]||0)-(x[i]||0);if(d)return d}return 0});
     if(!all.length)throw 0;
-    const url=x=>x.assets.find(a=>a.name.endsWith('.exe')).browser_download_url;
-    document.getElementById('dl').href=url(all[0]);
-    document.getElementById('meta').textContent='آخر إصدار: '+all[0].tag_name+' · '+(all[0].assets.find(a=>a.name.endsWith('.exe')).size/1048576).toFixed(0)+' ميغا · ويندوز 10/11';
-    document.getElementById('rows').innerHTML=all.map(x=>`<tr><td>${x.tag_name}</td><td>${x.published_at.slice(0,10)}</td><td><a href="${url(x)}">تحميل</a></td></tr>`).join('');
+    const asset=x=>x.assets.find(a=>a.name.endsWith('.exe'));
+    document.getElementById('dl').href=document.getElementById('dl2').href=asset(all[0]).browser_download_url;
+    document.getElementById('meta').textContent='آخر إصدار '+all[0].tag_name+' · '+(asset(all[0]).size/1048576).toFixed(0)+' ميغا · ويندوز 10/11';
+    document.getElementById('rows').innerHTML=all.map(x=>`<tr><td>${x.tag_name}</td><td>${x.published_at.slice(0,10)}</td><td><a href="${asset(x).browser_download_url}">تحميل</a></td></tr>`).join('');
   }catch(e){document.getElementById('meta').textContent='حمّل من صفحة الإصدارات في GitHub.';document.getElementById('rows').innerHTML='<tr><td colspan="3"><a href="https://github.com/ShadowRunnerj/hufra/releases">صفحة الإصدارات</a></td></tr>'}
 })();
 </script>
