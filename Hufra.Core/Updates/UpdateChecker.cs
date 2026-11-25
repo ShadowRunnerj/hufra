@@ -118,6 +118,8 @@ namespace Hufra.Core.Updates
                 foreach (var rel in doc.RootElement.EnumerateArray())
                 {
                     if (rel.TryGetProperty("draft", out var d) && d.GetBoolean()) continue;
+                    string tagName = rel.GetProperty("tag_name").GetString() ?? "";
+                    if (tagName == "v2.7.0" || tagName == "v2.7.1") continue; // إصدارات قديمة خاطئة التسلسل
                     var m = Regex.Match(rel.GetProperty("tag_name").GetString() ?? "", @"\d+(\.\d+){1,3}");
                     if (!m.Success || !Version.TryParse(m.Value, out var ver)) continue;
                     foreach (var asset in rel.GetProperty("assets").EnumerateArray())

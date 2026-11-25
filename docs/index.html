@@ -138,7 +138,8 @@ footer .fl{display:flex;gap:20px}footer a:hover{color:#fff}
 (async()=>{
   try{
     const r=await fetch('https://api.github.com/repos/ShadowRunnerj/hufra/releases?per_page=30');
-    const all=(await r.json()).filter(x=>!x.draft&&x.assets.some(a=>a.name.endsWith('.exe')));
+    const hide=['v2.7.0','v2.7.1'];/* إصدارات قديمة خاطئة التسلسل: تخفى لين تنحذف */
+    const all=(await r.json()).filter(x=>!x.draft&&!hide.includes(x.tag_name)&&x.assets.some(a=>a.name.endsWith('.exe')));
     const v=t=>(t.match(/\d+(\.\d+)+/)||['0'])[0].split('.').map(Number);
     all.sort((a,b)=>{const x=v(a.tag_name),y=v(b.tag_name);for(let i=0;i<4;i++){const d=(y[i]||0)-(x[i]||0);if(d)return d}return 0});
     if(!all.length)throw 0;
