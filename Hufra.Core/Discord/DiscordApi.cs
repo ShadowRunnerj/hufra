@@ -23,12 +23,22 @@ namespace Hufra.Core.Discord
     /// <summary>غلاف بسيط لـ Discord REST API v10 باستخدام توكن البوت، مع إعادة المحاولة عند 429.</summary>
     public sealed class DiscordApi : IDisposable
     {
-        private readonly HttpClient _http = new() { BaseAddress = new Uri("https://discord.com/api/v10/"), Timeout = TimeSpan.FromSeconds(30) };
+        private readonly HttpClient _http = new() { Timeout = TimeSpan.FromSeconds(30) };
+        private readonly bool _viaBackend;
 
         public DiscordApi(string botToken)
         {
+            _http.BaseAddress = new Uri("https://discord.com/api/v10/");
             _http.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", "Bot " + (botToken ?? "").Trim());
             _http.DefaultRequestHeaders.UserAgent.ParseAdd("DiscordBot (https://hufra.app, 1.0)");
+        }
+
+        /// <summary>عبر وسيط حُفرة: بدون توكن بوت في التطبيق، بجلسة المستخدم فقط</summary>
+        public DiscordApi(string backendUrl, string session)
+        {
+            _viaBackend = true;
+            _http.BaseAddress = new Uri(backendUrl.TrimEnd('/') + "/discord/");
+            _http.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", "Session " + session);
         }
 
         public void Dispose() => _http.Dispose();
@@ -69,13 +79,13 @@ namespace Hufra.Core.Discord
             throw new DiscordApiException(429, "ديسكورد يطلب الإبطاء كثيراً. جرّب بعد قليل.");
         }
 
-        private static DiscordApiException Friendly(int status, string body)
+        private DiscordApiException Friendly(int status, string body)
         {
             string detail = "";
             try { detail = JsonDocument.Parse(body).RootElement.GetProperty("message").GetString(); } catch { }
             return status switch
             {
-                401 => new DiscordApiException(401, "توكن البوت غير صحيح أو ملغى."),
+                401 => new DiscordApiException(401, _viaBackend ? "انتهت الجلسة. سجّل دخولك بديسكورد مرة ثانية." : "توكن البوت غير صحيح أو ملغى."),
                 403 => new DiscordApiException(403, "البوت ما عنده صلاحية لهذا الإجراء (Missing Permissions). تأكد أن رتبة البوت أعلى من الرتب المطلوبة وعنده Manage Roles وManage Channels. " + detail),
                 404 => new DiscordApiException(404, "غير موجود: تأكد من Server ID وأن البوت داخل السيرفر. " + detail),
                 _ => new DiscordApiException(status, $"خطأ من ديسكورد ({status}). {detail}"),

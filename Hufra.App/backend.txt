@@ -1,0 +1,3 @@
+# رابط خادم حُفرة الوسيط (Cloudflare Worker). مثال:  https://hufra-backend.YOUR-NAME.workers.dev
+# يُنشأ حسب worker/README.md ثم يُكتب هنا في سطر واحد.
+https://hufra-backend.YOUR-NAME.workers.dev

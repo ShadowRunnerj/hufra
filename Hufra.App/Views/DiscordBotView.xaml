@@ -23,21 +23,17 @@
                            Foreground="{StaticResource BrownDarkestBrush}" />
                 <StackPanel x:Name="SetupPanel" Margin="0,10,0,0">
                     <TextBlock TextWrapping="Wrap" FontSize="12" LineHeight="22" Foreground="{StaticResource BrownDarkBrush}">
-                        <Run FontWeight="Bold">إعداد البوت (مرة واحدة):</Run>
-                        <LineBreak />1) افتح discord.com/developers/applications ← New Application ← اسم للبوت.
-                        <LineBreak />2) من قسم Bot اضغط Reset Token وانسخ التوكن.
-                        <LineBreak />3) الصق التوكن هنا ثم اضغط «اتصال» — يتعرّف على سيرفرك تلقائياً (بدون Server ID).
-                        <LineBreak />4) إذا البوت مو داخل سيرفرك اضغط «إضافة البوت للسيرفر» ووافق، ثم «اتصال» مرة ثانية.
-                        <LineBreak />5) مهم: من إعدادات السيرفر ← الرتب، ارفع رتبة البوت فوق الرتب اللي تبيه يديرها.
+                        <Run FontWeight="Bold">كيف تبدأ:</Run>
+                        <LineBreak />1) اضغط «تسجيل الدخول بديسكورد» ووافق في المتصفح.
+                        <LineBreak />2) اختر السيرفر اللي تملكه (يظهر لك كل سيرفراتك).
+                        <LineBreak />3) إذا البوت مو داخل السيرفر ينفتح لك رابط إضافته تلقائياً، وافق على الصلاحيات.
+                        <LineBreak />4) اكتب اللي تبيه في الشات تحت.
                     </TextBlock>
-                    <TextBlock Text="توكن البوت" FontSize="12" Margin="0,10,0,4" Foreground="{StaticResource BrownPrimaryBrush}" />
-                    <PasswordBox x:Name="TokenBox" Padding="8,6" FlowDirection="LeftToRight" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
-                    <Button x:Name="DisconnectButton" Content="قطع الاتصال" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="Disconnect_Click" Visibility="Collapsed" />
-                    <Button x:Name="PortalButton" Content="🌐 لوحة المطورين" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="Portal_Click" />
-                    <Button x:Name="InviteButton" Content="➕ إضافة البوت للسيرفر" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="Invite_Click" IsEnabled="False" />
-                    <Button x:Name="ConnectButton" Content="🔌 اتصال" Style="{StaticResource PrimaryButtonStyle}" Click="Connect_Click" />
+                    <Button x:Name="DisconnectButton" Content="خروج" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="Disconnect_Click" Visibility="Collapsed" />
+                    <Button x:Name="ChangeGuildButton" Content="🔁 تغيير السيرفر" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="ChangeGuild_Click" Visibility="Collapsed" />
+                    <Button x:Name="ConnectButton" Content="🔑 تسجيل الدخول بديسكورد" Style="{StaticResource PrimaryButtonStyle}" Click="Connect_Click" />
                 </StackPanel>
             </StackPanel>
         </Border>

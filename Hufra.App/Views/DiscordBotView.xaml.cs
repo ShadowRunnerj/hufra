@@ -23,19 +23,23 @@ namespace Hufra.App.Views
         private CancellationTokenSource _cts;
         private bool _busy;
 
+        private static string _session, _clientId;
+        private static bool _autoTried;
+        private static CancellationTokenSource _waitCts;
+
         public DiscordBotView()
         {
             InitializeComponent();
             foreach (var (user, text) in Transcript) AddBubble(user, text, store: false);
             if (Transcript.Count == 0)
-                AddBubble(false, "أهلاً! الصق توكن البوت واضغط اتصال، وبعدها اكتب لي اللي تبيه. أمثلة:\n• سوّ لي سيرفر متجر: رومات ترحيب وقوانين وإعلانات وشات عام وصوت\n• سوّ رتب: مالك، إدارة، مشرف، عضو بألوان مختلفة\n• سوّ روم خاص للإدارة فقط\n• خلّ روم الإعلانات للقراءة فقط", store: false);
+                AddBubble(false, "أهلاً! سجّل دخولك بديسكورد من الأعلى، واختر سيرفرك، وبعدها اكتب لي اللي تبيه. أمثلة:\n• سوّ لي سيرفر متجر: رومات ترحيب وقوانين وإعلانات وشات عام وصوت\n• سوّ رتب: مالك، إدارة، مشرف، عضو\n• سوّ رومات: شات عام، صور، أخبار\n• احذف روم اسم", store: false);
             UpdateConnectionUi();
             PlanPanel.Visibility = _pending != null ? Visibility.Visible : Visibility.Collapsed;
-            // اتصال تلقائي: التوكن مضمّن مع التطبيق (bot-token.txt) أو محفوظ من قبل
-            if (!Connected && !_autoTried && (BundledToken().Length > 0 || !string.IsNullOrEmpty(AppSettingsStore.GetDiscordBotToken())))
+            // دخول تلقائي بالجلسة المحفوظة (صالحة 8 ساعات)
+            if (!Connected && !_autoTried && !string.IsNullOrEmpty(AppSettingsStore.GetDiscordBotToken()) && DiscordLogin.BackendUrl() != null)
             {
                 _autoTried = true;
-                Loaded += async (_, __) => await ConnectAsync();
+                Loaded += async (_, __) => await ConnectAsync(fresh: false);
             }
         }
 
@@ -46,105 +50,135 @@ namespace Hufra.App.Views
         {
             if (Connected)
             {
-                ConnectStatus.Text = $"🟢 متصل: البوت «{_botName}» ← السيرفر «{_guildName}»";
+                ConnectStatus.Text = $"🟢 متصل بسيرفر «{_guildName}»";
                 SetupPanel.Visibility = Visibility.Collapsed;
                 ConnectButton.Visibility = Visibility.Collapsed;
                 DisconnectButton.Visibility = Visibility.Visible;
-                InviteButton.IsEnabled = true;
+                ChangeGuildButton.Visibility = Visibility.Visible;
             }
             else
             {
-                ConnectStatus.Text = "⚪ غير متصل — الصق توكن البوت واضغط اتصال";
+                if (ConnectStatus.Text == "" || ConnectStatus.Text.StartsWith("🟢")) ConnectStatus.Text = "⚪ غير متصل — سجّل دخولك بديسكورد";
                 SetupPanel.Visibility = Visibility.Visible;
                 ConnectButton.Visibility = Visibility.Visible;
                 DisconnectButton.Visibility = Visibility.Collapsed;
-                InviteButton.IsEnabled = _botId != null;
+                ChangeGuildButton.Visibility = Visibility.Collapsed;
             }
         }
 
-        private static string BundledToken()
+        private void Connect_Click(object sender, RoutedEventArgs e) => _ = ConnectAsync(fresh: true);
+
+        private async System.Threading.Tasks.Task ConnectAsync(bool fresh)
         {
-            try
+            string backend = DiscordLogin.BackendUrl();
+            if (backend == null)
             {
-                string f = System.IO.Path.Combine(AppContext.BaseDirectory, "bot-token.txt");
-                if (!System.IO.File.Exists(f)) return "";
-                return System.IO.File.ReadAllLines(f).Select(l => l.Trim()).FirstOrDefault(l => l.Length > 20 && !l.StartsWith("#")) ?? "";
-            }
-            catch { return ""; }
-        }
-
-        private static bool _autoTried;
-
-        private void Connect_Click(object sender, RoutedEventArgs e) => _ = ConnectAsync();
-
-        private async System.Threading.Tasks.Task ConnectAsync()
-        {
-            string token = TokenBox.Password.Trim();
-            if (token.Length == 0) token = BundledToken();
-            if (token.Length == 0) token = AppSettingsStore.GetDiscordBotToken() ?? "";
-            if (token.Length == 0)
-            {
-                ConnectStatus.Text = "⚠️ الصق توكن البوت.";
+                ConnectStatus.Text = "⚠️ خادم حُفرة الوسيط غير مضبوط (ملف backend.txt). راجع المطوّر.";
                 return;
             }
 
             ConnectButton.IsEnabled = false;
-            ConnectStatus.Text = "⏳ جاري الاتصال...";
-            DiscordApi api = null;
             try
             {
-                api = new DiscordApi(token);
+                LoginResult login = null;
+                string saved = AppSettingsStore.GetDiscordBotToken();
+                if (!fresh && !string.IsNullOrEmpty(saved))
+                {
+                    ConnectStatus.Text = "⏳ جاري استعادة الجلسة...";
+                    try { login = await DiscordLogin.RefreshAsync(backend, saved); } catch (DiscordApiException) { login = null; }
+                }
+                if (login == null)
+                {
+                    ConnectStatus.Text = "⏳ افتح المتصفح ووافق على تسجيل الدخول بديسكورد...";
+                    login = await DiscordLogin.LoginAsync(backend, DiscordLogin.ClientIdFallback);
+                }
+                _session = login.Session; _clientId = login.ClientId;
+                AppSettingsStore.SetDiscordBotToken(_session);   // هنا يُحفظ «جلسة» المستخدم (مشفّرة بـ DPAPI) وليس توكن البوت
+
+                await ChooseGuildAsync(login, backend, pickAgain: fresh);
+            }
+            catch (DiscordApiException ex) { ConnectStatus.Text = "❌ " + ex.Message; }
+            finally { ConnectButton.IsEnabled = true; }
+        }
+
+        private async System.Threading.Tasks.Task ChooseGuildAsync(LoginResult login, string backend, bool pickAgain)
+        {
+            if (login.Guilds.Count == 0)
+            {
+                ConnectStatus.Text = $"⚠️ أهلاً {login.UserName}، ما لقيت سيرفر تملكه في حسابك. أنشئ سيرفر في ديسكورد أو سجّل بحساب مالك السيرفر.";
+                return;
+            }
+
+            OwnedGuild guild;
+            string savedId = AppSettingsStore.GetDiscordGuildId();
+            var keep = login.Guilds.FirstOrDefault(g => g.Id == savedId);
+            if (login.Guilds.Count == 1) guild = login.Guilds[0];
+            else if (keep != null && !pickAgain) guild = keep;
+            else
+            {
+                var dlg = new GuildPickerWindow(login.Guilds) { Owner = Window.GetWindow(this) };
+                if (dlg.ShowDialog() != true) { ConnectStatus.Text = "⚪ ما اخترت سيرفر."; return; }
+                guild = dlg.Selected;
+            }
+
+            if (!guild.BotIn)
+            {
+                ConnectStatus.Text = $"➕ أضف البوت لسيرفر «{guild.Name}» من الصفحة اللي انفتحت (وافق على كل الصلاحيات)… أنتظرك.";
+                Process.Start(new ProcessStartInfo(DiscordLogin.InviteUrl(login.ClientId, guild.Id)) { UseShellExecute = true });
+                _waitCts?.Cancel(); _waitCts = new CancellationTokenSource();
+                var ct = _waitCts.Token;
+                for (int i = 0; i < 60 && !ct.IsCancellationRequested; i++)
+                {
+                    await System.Threading.Tasks.Task.Delay(3000);
+                    try
+                    {
+                        var r = await DiscordLogin.RefreshAsync(backend, _session);
+                        if (r.Guilds.Any(g => g.Id == guild.Id && g.BotIn)) { guild = guild with { BotIn = true }; break; }
+                    }
+                    catch (DiscordApiException) { }
+                }
+                if (!guild.BotIn) { ConnectStatus.Text = "⚠️ ما انضاف البوت. أضفه ثم اضغط «تسجيل الدخول» مرة ثانية."; return; }
+            }
+
+            var api = new DiscordApi(backend, _session);
+            try
+            {
                 var me = await api.GetMeAsync();
                 _botId = me.Id; _botName = me.Name;
-                InviteButton.IsEnabled = true;
-                var guilds = await api.GetMyGuildsAsync();
-                if (guilds.Count == 0)
-                {
-                    ConnectStatus.Text = $"⚠️ التوكن صحيح (البوت «{_botName}») لكن البوت مو داخل أي سيرفر. اضغط «➕ إضافة البوت للسيرفر» ووافق، ثم اضغط اتصال مرة ثانية.";
-                    api.Dispose();
-                    return;
-                }
-                string guild = guilds[0].Id, name = guilds[0].Name;
-                string saved = AppSettingsStore.GetDiscordGuildId();
-                var keep = guilds.FirstOrDefault(g => g.Id == saved);
-                if (keep.Id != null) { guild = keep.Id; name = keep.Name; }
-                else if (guilds.Count > 1)
-                {
-                    var dlg = new GuildPickerWindow(guilds) { Owner = Window.GetWindow(this) };
-                    if (dlg.ShowDialog() != true) { api.Dispose(); ConnectStatus.Text = "⚪ أُلغي الاتصال."; return; }
-                    guild = dlg.Selected.Id; name = dlg.Selected.Name;
-                }
-                _api?.Dispose();
-                _api = api; _guildId = guild; _guildName = name;
-                AppSettingsStore.SetDiscordBotToken(token);   // يُحفظ مشفّراً بحساب ويندوز
-                AppSettingsStore.SetDiscordGuildId(guild);
-                TokenBox.Clear();
-                UpdateConnectionUi();
-                AddBubble(false, $"تم الاتصال بسيرفر «{name}». وش تبي أسوي؟");
+                await api.GetGuildNameAsync(guild.Id); // يتأكد أن البوت يشوف السيرفر
             }
-            catch (DiscordApiException ex)
+            catch { api.Dispose(); throw; }
+
+            _api?.Dispose();
+            _api = api; _guildId = guild.Id; _guildName = guild.Name;
+            AppSettingsStore.SetDiscordGuildId(guild.Id);
+            UpdateConnectionUi();
+            AddBubble(false, $"أهلاً {login.UserName}! اتصلت بسيرفر «{guild.Name}». وش تبي أسوي؟");
+        }
+
+        private void ChangeGuild_Click(object sender, RoutedEventArgs e) => _ = ChangeGuildAsync();
+
+        private async System.Threading.Tasks.Task ChangeGuildAsync()
+        {
+            string backend = DiscordLogin.BackendUrl();
+            if (backend == null || string.IsNullOrEmpty(_session)) return;
+            try
             {
-                api?.Dispose();
-                ConnectStatus.Text = "❌ " + ex.Message;
+                var login = await DiscordLogin.RefreshAsync(backend, _session);
+                _pending = null; PlanPanel.Visibility = Visibility.Collapsed;
+                await ChooseGuildAsync(login, backend, pickAgain: true);
             }
-            finally { ConnectButton.IsEnabled = true; }
+            catch (DiscordApiException ex) { ConnectStatus.Text = "❌ " + ex.Message; }
         }
 
         private void Disconnect_Click(object sender, RoutedEventArgs e)
         {
-            _api?.Dispose(); _api = null; _guildId = null; _pending = null;
+            _waitCts?.Cancel();
+            _api?.Dispose(); _api = null; _guildId = null; _pending = null; _session = null;
             AppSettingsStore.SetDiscordBotToken(null);
+            ConnectStatus.Text = "";
             PlanPanel.Visibility = Visibility.Collapsed;
             UpdateConnectionUi();
-        }
-
-        private void Portal_Click(object sender, RoutedEventArgs e) =>
-            Process.Start(new ProcessStartInfo("https://discord.com/developers/applications") { UseShellExecute = true });
-
-        private void Invite_Click(object sender, RoutedEventArgs e)
-        {
-            if (_botId == null) return;
-            Process.Start(new ProcessStartInfo(DiscordApi.InviteUrl(_botId)) { UseShellExecute = true });
         }
 
         // ---------- الشات ----------
