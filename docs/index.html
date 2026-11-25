@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>حُفرة (Hufra) — مساعد سيرفر الديسكورد بالذكاء الاصطناعي | تحميل</title>
+<meta name="description" content="حُفرة: برنامج ويندوز عربي تكتب فيه اللي تبيه ويجهّز لك رومات ورتب وصلاحيات سيرفر الديسكورد. تحميل مجاني.">
+<link rel="icon" href="logo.png">
+<meta property="og:title" content="حُفرة — مساعد سيرفر الديسكورد">
+<meta property="og:description" content="اكتب اللي تبيه بالعربي ويجهّز لك سيرفرك. تحميل مجاني لويندوز.">
+<style>
+:root{--bg:#f7f0e6;--ink:#2e1b10;--brown:#7a4423;--gold:#d9a877;--card:#fff;--line:#e5ddd0}
+@media(prefers-color-scheme:dark){:root{--bg:#20120a;--ink:#f7f0e6;--card:#33200f;--line:#4a2b18}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.8}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.hero{padding:56px 0 36px;text-align:center}
+.hero img{width:112px;height:112px;border-radius:26px}
+h1{font-size:44px;margin:14px 0 4px}.sub{font-size:19px;opacity:.85;margin:0 0 26px}
+.btn{display:inline-block;background:var(--brown);color:#fff;text-decoration:none;font-weight:700;font-size:20px;padding:14px 34px;border-radius:14px}
+.btn:hover{filter:brightness(1.1)}.meta{font-size:13px;opacity:.7;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:30px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h3{margin:0 0 6px;color:var(--brown)}@media(prefers-color-scheme:dark){.card h3{color:var(--gold)}}
+h2{margin-top:36px}ol{padding-inline-start:22px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+td,th{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line)}a{color:var(--brown)}
+@media(prefers-color-scheme:dark){a{color:var(--gold)}}
+footer{text-align:center;opacity:.7;font-size:13px;padding:34px 0 50px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <img src="logo.png" alt="شعار حُفرة">
+  <h1>حُفرة</h1>
+  <p class="sub">اكتب اللي تبيه بالعربي… ويجهّز لك سيرفر الديسكورد</p>
+  <a id="dl" class="btn" href="https://github.com/ShadowRunnerj/hufra/releases/latest">⬇ تحميل حُفرة لويندوز</a>
+  <div class="meta" id="meta">جاري جلب آخر إصدار…</div>
+</header>
+
+<div class="grid">
+  <div class="card"><h3>💬 شات بالعربي</h3>اكتب «سوّ لي سيرفر متجر» أو «سوّ رتب: مالك، إدارة، عضو».</div>
+  <div class="card"><h3>🧩 رومات ورتب وصلاحيات</h3>رومات نصية وصوتية، فئات، رتب بألوان، وأقسام خاصة بالإدارة.</div>
+  <div class="card"><h3>✅ تراجع قبل التنفيذ</h3>تشوف الخطة كاملة وتوافق عليها، ولا يتغير شي بدون موافقتك.</div>
+  <div class="card"><h3>🔄 تحديثات من داخل البرنامج</h3>صفحة تنزيل وتحديث بضغطة زر لأي إصدار.</div>
+</div>
+
+<h2>طريقة الاستخدام</h2>
+<ol>
+  <li>حمّل <b>Hufra-Setup.exe</b> وثبّته.</li>
+  <li>ادخل سيرفر الديسكورد وضع مفتاح Gemini عند أول تشغيل.</li>
+  <li>افتح «بوت الديسكورد» واربط البوت بسيرفرك.</li>
+  <li>اكتب اللي تبيه ووافق على الخطة.</li>
+</ol>
+<p><b>ملاحظة:</b> الملف غير موقّع رقمياً، فقد يعرض ويندوز تحذير SmartScreen: اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال».</p>
+
+<h2>كل الإصدارات</h2>
+<table><thead><tr><th>الإصدار</th><th>التاريخ</th><th>تحميل</th></tr></thead><tbody id="rows"><tr><td colspan="3">جاري التحميل…</td></tr></tbody></table>
+
+<footer>تطوير: BASSAM DEV · <a href="https://discord.gg/zcZeDZFwsP">الدعم على الديسكورد</a> · <a href="https://github.com/ShadowRunnerj/hufra">GitHub</a></footer>
+</div>
+<script>
+(async()=>{
+  try{
+    const r=await fetch('https://api.github.com/repos/ShadowRunnerj/hufra/releases?per_page=30');
+    const all=(await r.json()).filter(x=>!x.draft&&x.assets.some(a=>a.name.endsWith('.exe')));
+    const v=t=>(t.match(/\d+(\.\d+)+/)||['0'])[0].split('.').map(Number);
+    all.sort((a,b)=>{const x=v(a.tag_name),y=v(b.tag_name);for(let i=0;i<4;i++){const d=(y[i]||0)-(x[i]||0);if(d)return d}return 0});
+    if(!all.length)throw 0;
+    const url=x=>x.assets.find(a=>a.name.endsWith('.exe')).browser_download_url;
+    document.getElementById('dl').href=url(all[0]);
+    document.getElementById('meta').textContent='آخر إصدار: '+all[0].tag_name+' · '+(all[0].assets.find(a=>a.name.endsWith('.exe')).size/1048576).toFixed(0)+' ميغا · ويندوز 10/11';
+    document.getElementById('rows').innerHTML=all.map(x=>`<tr><td>${x.tag_name}</td><td>${x.published_at.slice(0,10)}</td><td><a href="${url(x)}">تحميل</a></td></tr>`).join('');
+  }catch(e){document.getElementById('meta').textContent='حمّل من صفحة الإصدارات في GitHub.';document.getElementById('rows').innerHTML='<tr><td colspan="3"><a href="https://github.com/ShadowRunnerj/hufra/releases">صفحة الإصدارات</a></td></tr>'}
+})();
+</script>
+</body>
+</html>
