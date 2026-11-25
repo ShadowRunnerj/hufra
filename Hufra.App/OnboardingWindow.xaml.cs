@@ -21,7 +21,11 @@ namespace Hufra.App
         private static void Open(string url) =>
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
 
-        private void OpenDiscord_Click(object sender, RoutedEventArgs e) => Open(DiscordUrl);
+        private void OpenDiscord_Click(object sender, RoutedEventArgs e)
+        {
+            Open(DiscordUrl);
+            JoinedCheck.IsEnabled = true; // لا يُفعّل التأكيد إلا بعد فتح رابط السيرفر
+        }
         private void OpenGemini_Click(object sender, RoutedEventArgs e) => Open(GeminiKeysUrl);
 
         private void JoinedCheck_Changed(object sender, RoutedEventArgs e) =>
