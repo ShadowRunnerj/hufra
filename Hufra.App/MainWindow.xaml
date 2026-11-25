@@ -61,6 +61,17 @@
                             <TextBlock Grid.Column="1" Text="بوت الديسكورد" VerticalAlignment="Center" />
                         </Grid>
                     </RadioButton>
+                    <RadioButton x:Name="NavUpdates" Style="{StaticResource NavButtonStyle}"
+                                 GroupName="Nav" Checked="Nav_Checked" Tag="Updates">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="⬇" FontSize="17" VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="1" Text="التحديثات والتنزيل" VerticalAlignment="Center" />
+                        </Grid>
+                    </RadioButton>
                     <RadioButton x:Name="NavSettings" Style="{StaticResource NavButtonStyle}"
                                  GroupName="Nav" Checked="Nav_Checked" Tag="Settings">
                         <Grid>

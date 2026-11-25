@@ -168,6 +168,7 @@ namespace Hufra.App
                 "Home" => NavHome,
                 "Support" => NavSupport,
                 "Discord" => NavDiscord,
+                "Updates" => NavUpdates,
                 "Settings" => NavSettings,
                 _ => null,
             };
@@ -187,6 +188,7 @@ namespace Hufra.App
                     "Home" => "الرئيسية",
                     "Support" => "الدعم والمعلومات",
                     "Discord" => "بوت الديسكورد",
+                    "Updates" => "التحديثات والتنزيل",
                     "Settings" => "الإعدادات",
                     _ => PageTitleText.Text,
                 };
@@ -197,6 +199,7 @@ namespace Hufra.App
                 "Home" => new HomeView(),
                 "Support" => new SupportView(),
                 "Discord" => new DiscordBotView(),
+                "Updates" => new UpdatesView(),
                 "Settings" => new SettingsView(),
                 _ => MainContent.Content,
             };

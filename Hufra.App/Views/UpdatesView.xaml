@@ -1,0 +1,25 @@
+<UserControl x:Class="Hufra.App.Views.UpdatesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <TextBlock Text="التحديثات والتنزيل" Style="{StaticResource PageTitleStyle}" />
+            <TextBlock Text="نزّل أحدث إصدار من حُفرة أو أي إصدار سابق من هنا." Style="{StaticResource PageSubtitleStyle}" />
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,14,0,0">
+                <StackPanel>
+                    <TextBlock x:Name="CurrentText" FontWeight="Bold" FontSize="14" Foreground="{StaticResource BrownDarkestBrush}" />
+                    <TextBlock x:Name="StatusText" Margin="0,8,0,0" FontSize="12" TextWrapping="Wrap" Foreground="{StaticResource BrownDarkBrush}" />
+                    <ProgressBar x:Name="Progress" Height="8" Margin="0,10,0,0" Minimum="0" Maximum="100" Visibility="Collapsed" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+                        <Button x:Name="RefreshButton" Content="🔄 فحص الإصدارات" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="Refresh_Click" />
+                        <Button x:Name="UpdateLatestButton" Content="⬇ تحديث لآخر إصدار" Style="{StaticResource PrimaryButtonStyle}" Click="UpdateLatest_Click" Visibility="Collapsed" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="كل الإصدارات" FontWeight="Bold" FontSize="14" Margin="0,18,0,6" Foreground="{StaticResource BrownDarkestBrush}" />
+            <StackPanel x:Name="ReleasesPanel" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

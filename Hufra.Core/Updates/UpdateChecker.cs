@@ -99,6 +99,47 @@ namespace Hufra.Core.Updates
             return null;
         }
 
+        /// <summary>كل الإصدارات المنشورة (من الأحدث) — لصفحة التحديثات</summary>
+        public static async Task<System.Collections.Generic.List<UpdateInfo>> ListAsync()
+        {
+            LastProblem = null;
+            var list = new System.Collections.Generic.List<UpdateInfo>();
+            try
+            {
+                string repo = GetRepo();
+                if (repo == null) { LastProblem = "المستودع غير مضبوط في update-repo.txt."; return list; }
+                string json;
+                try { json = await Http.GetStringAsync($"https://api.github.com/repos/{repo}/releases?per_page=30"); }
+                catch (HttpRequestException hex) when (hex.StatusCode == System.Net.HttpStatusCode.NotFound)
+                { LastProblem = $"ما لقيت المستودع «{repo}» (غلط أو Private)."; return list; }
+                catch (HttpRequestException) { LastProblem = "ما فيه اتصال بالإنترنت أو GitHub غير متاح/رفض الطلب."; return list; }
+
+                using var doc = JsonDocument.Parse(json);
+                foreach (var rel in doc.RootElement.EnumerateArray())
+                {
+                    if (rel.TryGetProperty("draft", out var d) && d.GetBoolean()) continue;
+                    var m = Regex.Match(rel.GetProperty("tag_name").GetString() ?? "", @"\d+(\.\d+){1,3}");
+                    if (!m.Success || !Version.TryParse(m.Value, out var ver)) continue;
+                    foreach (var asset in rel.GetProperty("assets").EnumerateArray())
+                    {
+                        string name = asset.GetProperty("name").GetString() ?? "";
+                        if (!name.EndsWith(".exe", StringComparison.OrdinalIgnoreCase)) continue;
+                        list.Add(new UpdateInfo
+                        {
+                            Version = ver, FileName = name,
+                            DownloadUrl = asset.GetProperty("browser_download_url").GetString(),
+                            Notes = rel.TryGetProperty("body", out var b) ? b.GetString() : null,
+                        });
+                        break;
+                    }
+                }
+                list.Sort((a, b) => b.Version.CompareTo(a.Version));
+                if (list.Count == 0) LastProblem = "ما فيه إصدارات منشورة فيها ملف .exe.";
+            }
+            catch (Exception ex) { LastProblem = "تعذّر جلب الإصدارات: " + ex.Message; }
+            return list;
+        }
+
         /// <summary>ينزّل ملف التنصيب لمجلد Temp ويرجّع مساره (progress من 0 إلى 100)</summary>
         public static async Task<string> DownloadAsync(UpdateInfo info, IProgress<int> progress)
         {
