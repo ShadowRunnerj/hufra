@@ -1,0 +1,41 @@
+name: Release
+# يبني Hufra-Setup.exe على سيرفر ويندوز من GitHub وينشره كـ Release تلقائياً.
+# الاستخدام: git tag v2.7.0 && git push origin v2.7.0   (أو من تبويب Actions ← Run workflow)
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'رقم الإصدار (مثل 2.7.0)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Version
+        id: v
+        shell: pwsh
+        run: |
+          $ver = if ('${{ github.event.inputs.version }}') { '${{ github.event.inputs.version }}' } else { '${{ github.ref_name }}'.TrimStart('v') }
+          "ver=$ver" >> $env:GITHUB_OUTPUT
+          (Get-Content installer/Hufra.iss -Raw) -replace '(?m)^(#define\s+MyAppVersion\s+")[\d.]+(")', "`${1}$ver`${2}" | Set-Content installer/Hufra.iss -Encoding UTF8
+          (Get-Content Hufra.App/MainWindow.xaml.cs -Raw) -replace 'CurrentVersion = "[\d.]+"', "CurrentVersion = `"$ver`"" | Set-Content Hufra.App/MainWindow.xaml.cs -Encoding UTF8
+      - name: Publish
+        run: dotnet publish Hufra.App/Hufra.App.csproj -c Release -r win-x64 --self-contained true -o dist
+      - name: Installer
+        run: |
+          choco install innosetup -y --no-progress
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\Hufra.iss
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "v${{ steps.v.outputs.ver }}" Output/Hufra-Setup.exe --title "Hufra ${{ steps.v.outputs.ver }}" --notes "تحديث ${{ steps.v.outputs.ver }}"

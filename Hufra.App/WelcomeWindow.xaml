@@ -1,0 +1,43 @@
+<Window x:Class="Hufra.App.WelcomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="حُفرة - أهلاً بك" Height="480" Width="420"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow">
+    <Grid Background="{StaticResource CreamBackgroundBrush}">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30">
+
+            <Border Width="88" Height="88" CornerRadius="18" ClipToBounds="True" HorizontalAlignment="Center">
+                <Image Source="Assets/hufra_logo.png" Stretch="UniformToFill" />
+            </Border>
+
+            <TextBlock Text="أهلاً بك في حُفرة" FontSize="22" FontWeight="Bold"
+                       Foreground="{StaticResource BrownDarkestBrush}" Margin="0,16,0,0"
+                       HorizontalAlignment="Center" />
+            <TextBlock Text="قبل ما نبدأ، عرّفنا عليك (تقدر تعدّل هذا لاحقاً من نفس المكان)"
+                       FontSize="12" Foreground="{StaticResource BrownPrimaryBrush}"
+                       Margin="0,4,0,20" HorizontalAlignment="Center" TextWrapping="Wrap"
+                       TextAlignment="Center" MaxWidth="320" />
+
+            <Border x:Name="AvatarPreviewBorder" Width="80" Height="80" CornerRadius="40" Cursor="Hand"
+                    Background="{StaticResource BrownPrimaryBrush}" HorizontalAlignment="Center"
+                    MouseLeftButtonUp="ChooseAvatar_Click">
+                <Grid>
+                    <TextBlock x:Name="AvatarInitialText" Text="＋" Foreground="White" FontSize="26"
+                               FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Image x:Name="AvatarImagePreview" Stretch="UniformToFill" Visibility="Collapsed" />
+                </Grid>
+            </Border>
+            <TextBlock Text="اضغط لإضافة صورة (اختياري)" FontSize="10" Margin="0,6,0,20"
+                       Foreground="{StaticResource BrownPrimaryBrush}" HorizontalAlignment="Center" />
+
+            <TextBox x:Name="NameBox" Width="280" Padding="10,8" FlowDirection="RightToLeft"
+                     FontSize="14" HorizontalAlignment="Center" />
+            <TextBlock Text="اكتب اسمك" FontSize="10" Margin="0,4,0,24"
+                       Foreground="{StaticResource BrownPrimaryBrush}" HorizontalAlignment="Center" />
+
+            <Button Content="ابدأ استخدام حُفرة" Style="{StaticResource PrimaryButtonStyle}"
+                    FontSize="15" Padding="24,12" HorizontalAlignment="Center" Click="Continue_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

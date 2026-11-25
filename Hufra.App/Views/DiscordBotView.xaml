@@ -1,0 +1,75 @@
+<UserControl x:Class="Hufra.App.Views.DiscordBotView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="بوت الديسكورد" Style="{StaticResource PageTitleStyle}" />
+            <TextBlock Text="اكتب اللي تبيه بالعربي: رومات، رتب، صلاحيات — والبوت يسوّيه في سيرفرك بعد موافقتك"
+                       Style="{StaticResource PageSubtitleStyle}" TextWrapping="Wrap" />
+        </StackPanel>
+
+        <!-- الاتصال -->
+        <Border Grid.Row="1" x:Name="ConnectCard" Style="{StaticResource CardStyle}" Margin="0,14,0,0">
+            <StackPanel>
+                <TextBlock x:Name="ConnectStatus" FontWeight="Bold" FontSize="13" TextWrapping="Wrap"
+                           Foreground="{StaticResource BrownDarkestBrush}" />
+                <StackPanel x:Name="SetupPanel" Margin="0,10,0,0">
+                    <TextBlock TextWrapping="Wrap" FontSize="12" LineHeight="22" Foreground="{StaticResource BrownDarkBrush}">
+                        <Run FontWeight="Bold">إعداد البوت (مرة واحدة):</Run>
+                        <LineBreak />1) افتح discord.com/developers/applications ← New Application ← اسم للبوت.
+                        <LineBreak />2) من قسم Bot اضغط Reset Token وانسخ التوكن.
+                        <LineBreak />3) الصق التوكن هنا ثم اضغط «اتصال» — يتعرّف على سيرفرك تلقائياً (بدون Server ID).
+                        <LineBreak />4) إذا البوت مو داخل سيرفرك اضغط «إضافة البوت للسيرفر» ووافق، ثم «اتصال» مرة ثانية.
+                        <LineBreak />5) مهم: من إعدادات السيرفر ← الرتب، ارفع رتبة البوت فوق الرتب اللي تبيه يديرها.
+                    </TextBlock>
+                    <TextBlock Text="توكن البوت" FontSize="12" Margin="0,10,0,4" Foreground="{StaticResource BrownPrimaryBrush}" />
+                    <PasswordBox x:Name="TokenBox" Padding="8,6" FlowDirection="LeftToRight" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+                    <Button x:Name="DisconnectButton" Content="قطع الاتصال" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="Disconnect_Click" Visibility="Collapsed" />
+                    <Button x:Name="PortalButton" Content="🌐 لوحة المطورين" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="Portal_Click" />
+                    <Button x:Name="InviteButton" Content="➕ إضافة البوت للسيرفر" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="Invite_Click" IsEnabled="False" />
+                    <Button x:Name="ConnectButton" Content="🔌 اتصال" Style="{StaticResource PrimaryButtonStyle}" Click="Connect_Click" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- الشات -->
+        <Border Grid.Row="2" Style="{StaticResource CardStyle}" Margin="0,14,0,0" MinHeight="200">
+            <ScrollViewer x:Name="ChatScroll" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="ChatPanel" />
+            </ScrollViewer>
+        </Border>
+
+        <!-- لوحة الموافقة على الخطة -->
+        <Border Grid.Row="3" x:Name="PlanPanel" Style="{StaticResource CardStyle}" Margin="0,10,0,0" Visibility="Collapsed">
+            <StackPanel>
+                <TextBlock Text="الخطة جاهزة — راجعها ثم نفّذ" FontWeight="Bold" Foreground="{StaticResource BrownDarkestBrush}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8,0,0">
+                    <Button Content="❌ إلغاء" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="CancelPlan_Click" />
+                    <Button x:Name="ExecuteButton" Content="✅ تنفيذ الخطة" Style="{StaticResource PrimaryButtonStyle}" Click="Execute_Click" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- الإدخال -->
+        <Grid Grid.Row="4" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="InputBox" Grid.Column="0" MinHeight="44" MaxHeight="110" Padding="10,8" TextWrapping="Wrap"
+                     AcceptsReturn="True" VerticalScrollBarVisibility="Auto" FontSize="14" PreviewKeyDown="Input_PreviewKeyDown" />
+            <Button x:Name="SendButton" Grid.Column="1" Content="إرسال ➤" Style="{StaticResource PrimaryButtonStyle}"
+                    Margin="10,0,0,0" VerticalAlignment="Stretch" Click="Send_Click" />
+        </Grid>
+    </Grid>
+</UserControl>

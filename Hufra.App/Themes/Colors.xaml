@@ -1,0 +1,158 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- الهوية: صدأ/نحاس دافئ (مستوحى من شعار معدني صدئ) مع لمسة ذهبية للتمييز -->
+
+    <Color x:Key="BrownDarkestColor">#2E1B10</Color>
+    <Color x:Key="BrownDarkColor">#583019</Color>
+    <Color x:Key="BrownPrimaryColor">#8A4E28</Color>
+    <Color x:Key="BrownLightColor">#D8A876</Color>
+    <Color x:Key="AccentGoldColor">#D19A3E</Color>
+    <Color x:Key="CreamBackgroundColor">#F7F0E6</Color>
+    <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="SuccessColor">#4E7A51</Color>
+    <Color x:Key="WarningColor">#B5651D</Color>
+    <Color x:Key="DangerColor">#A6402F</Color>
+
+    <SolidColorBrush x:Key="BrownDarkestBrush" Color="{StaticResource BrownDarkestColor}" />
+    <SolidColorBrush x:Key="BrownDarkBrush" Color="{StaticResource BrownDarkColor}" />
+    <SolidColorBrush x:Key="BrownPrimaryBrush" Color="{StaticResource BrownPrimaryColor}" />
+    <SolidColorBrush x:Key="BrownLightBrush" Color="{StaticResource BrownLightColor}" />
+    <SolidColorBrush x:Key="AccentGoldBrush" Color="{StaticResource AccentGoldColor}" />
+    <SolidColorBrush x:Key="CreamBackgroundBrush" Color="{StaticResource CreamBackgroundColor}" />
+    <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource CardBackgroundColor}" />
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}" />
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}" />
+    <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}" />
+
+    <!-- تدرج الشريط الجانبي: من صدئ غامق فوق لأغمق شوي تحت -->
+    <LinearGradientBrush x:Key="SidebarGradientBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#3D2213" Offset="0" />
+        <GradientStop Color="#2E1B10" Offset="1" />
+    </LinearGradientBrush>
+
+    <!-- نمط زر التنقل الجانبي: خلفية عند التفعيل + خط ذهبي جانبي يوضح العنصر النشط -->
+    <Style x:Key="NavButtonStyle" TargetType="RadioButton">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="Height" Value="46" />
+        <Setter Property="Padding" Value="18,0" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Foreground" Value="#E8DFD3" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid Margin="8,3">
+                        <Border x:Name="Bg" Background="Transparent" CornerRadius="8" />
+                        <Border x:Name="Accent" Width="4" HorizontalAlignment="Right" CornerRadius="0,4,4,0"
+                                Background="{StaticResource AccentGoldBrush}" Opacity="0" />
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Right"
+                                          Margin="{TemplateBinding Padding}" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Bg" Property="Background" Value="#9A5B2E" />
+                            <Setter TargetName="Accent" Property="Opacity" Value="1" />
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bg" Property="Background" Value="#452818" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- نمط الزر الأساسي (إجراءات مثل "ابدأ التعريب") -->
+    <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource BrownPrimaryBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Padding" Value="22,11" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd" Background="{TemplateBinding Background}" CornerRadius="9">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Margin="{TemplateBinding Padding}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource BrownDarkBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource BrownDarkestBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Bd" Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- نمط زر ثانوي (إجراءات أقل أهمية، بحد بدل تعبئة) -->
+    <Style x:Key="SecondaryButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource BrownPrimaryBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd" Background="Transparent" CornerRadius="9"
+                            BorderBrush="{StaticResource BrownPrimaryBrush}" BorderThickness="1.5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Margin="{TemplateBinding Padding}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="#F1E8DA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- نمط البطاقة (Card) العامة المستخدمة بمعظم الصفحات -->
+    <!-- ملاحظة: تعمّدنا عدم استخدام DropShadowEffect (كان يسبب تجمّد دائم على
+         بعض تعريفات كروت الشاشة القديمة/المدمجة). حد بسيط بديل آمن 100%. -->
+    <Style x:Key="CardStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource CardBackgroundBrush}" />
+        <Setter Property="CornerRadius" Value="14" />
+        <Setter Property="Padding" Value="22" />
+        <Setter Property="BorderBrush" Value="#E8DECE" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <!-- نمط بطاقة قابلة للنقر (اختيار ملف/Steam) - حد يتلوّن ذهبي عند المرور -->
+    <Style x:Key="ClickableCardStyle" TargetType="Border" BasedOn="{StaticResource CardStyle}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource AccentGoldBrush}" />
+                <Setter Property="Background" Value="#FFFDF8" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- عنوان صفحة رئيسي موحّد -->
+    <Style x:Key="PageTitleStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{StaticResource BrownDarkestBrush}" />
+    </Style>
+
+    <!-- وصف فرعي تحت عنوان الصفحة -->
+    <Style x:Key="PageSubtitleStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Margin" Value="0,4,0,0" />
+        <Setter Property="Foreground" Value="{StaticResource BrownPrimaryBrush}" />
+    </Style>
+
+</ResourceDictionary>

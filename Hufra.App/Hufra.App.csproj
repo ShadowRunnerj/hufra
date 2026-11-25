@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <ApplicationTitle>حُفرة</ApplicationTitle>
+    <AssemblyName>Hufra</AssemblyName>
+    <RootNamespace>Hufra.App</RootNamespace>
+    <ApplicationIcon>Assets\hufra.ico</ApplicationIcon>
+    <Version>2.6.2</Version>
+    <AssemblyVersion>2.6.2.0</AssemblyVersion>
+    <FileVersion>2.6.2.0</FileVersion>
+  </PropertyGroup>
+
+  <!-- بقايا صفحة المودات المحذوفة (تبقى لو فُك الضغط فوق نسخة قديمة) -->
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\ModsView.xaml.cs" />
+    <Page Remove="Views\ModsView.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="bot-token.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="update-repo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Fonts\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\hufra.ico" />
+    <Resource Include="Assets\hufra_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hufra.Core\Hufra.Core.csproj" />
+  </ItemGroup>
+
+</Project>

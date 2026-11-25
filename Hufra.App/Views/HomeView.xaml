@@ -1,0 +1,32 @@
+<UserControl x:Class="Hufra.App.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel>
+        <Border Height="170" CornerRadius="18" ClipToBounds="True">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#F3E3CB" Offset="0" />
+                    <GradientStop Color="#D9A877" Offset="0.45" />
+                    <GradientStop Color="#7A4423" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="34,0">
+                <TextBlock Text="ح" FontSize="210" FontWeight="Bold" Foreground="#5B2F17" Opacity="0.10"
+                           HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-30,0,0" />
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock Text="حُفرة" FontSize="52" FontWeight="Bold" Foreground="#2E1B10" />
+                    <TextBlock Text="مساعد سيرفر الديسكورد — اكتب اللي تبيه وأنا أسوّيه" FontSize="14" Foreground="#583019" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Style="{StaticResource CardStyle}" Margin="0,18,0,0">
+            <StackPanel>
+                <TextBlock Text="بوت الديسكورد" FontWeight="Bold" FontSize="15" Foreground="{StaticResource BrownDarkestBrush}" />
+                <TextBlock Text="افتح «بوت الديسكورد»، الصق توكن البوت، واكتب اللي تبيه: رومات، رتب، صلاحيات." Margin="0,8,0,0" FontSize="12" TextWrapping="Wrap" Foreground="{StaticResource BrownDarkBrush}" />
+            </StackPanel>
+        </Border>
+    </StackPanel>
+    </ScrollViewer>
+</UserControl>
