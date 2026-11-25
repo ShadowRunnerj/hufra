@@ -71,8 +71,23 @@ export default {
     const url = new URL(req.url);
     const path = url.pathname.replace(/^\/+/, "");
 
-    if (path === "" || path === "health") return json({ ok: true, name: "hufra-backend" });
+    // فحص الإعداد: يوضح أي متغير ناقص (بدون كشف قيمه)
+    const need = ["CLIENT_ID", "BOT_TOKEN", "CLIENT_SECRET", "SESSION_SECRET"];
+    const missing = need.filter((k) => !env[k] || String(env[k]).trim() === "");
+    if (path === "" || path === "health") return json({ ok: missing.length === 0, name: "hufra-backend", missing });
+    if (missing.length) return json({ error: "missing_config", message: "متغيرات ناقصة في Cloudflare: " + missing.join(", "), missing }, 500);
 
+    try {
+      return await handle(req, env, url, path);
+    } catch (e) {
+      return json({ error: "server_error", message: String((e && e.message) || e) }, 500);
+    }
+  },
+};
+
+async function handle(req, env, url, path) {
+  {
+    {
     // 1) تسجيل الدخول: يستبدل code بهوية المستخدم ويرجّع جلسة + سيرفراته
     if (path === "auth" && req.method === "POST") {
       const { code, redirect_uri } = await req.json().catch(() => ({}));
@@ -134,5 +149,6 @@ export default {
     }
 
     return json({ error: "not_found" }, 404);
-  },
-};
+    }
+  }
+}

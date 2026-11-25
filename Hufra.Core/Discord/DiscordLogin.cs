@@ -98,7 +98,9 @@ namespace Hufra.Core.Discord
             string text = await resp.Content.ReadAsStringAsync(ct);
             if (resp.IsSuccessStatusCode) return text;
             if ((int)resp.StatusCode == 401) throw new DiscordApiException(401, "انتهت الجلسة أو فشل تسجيل الدخول. سجّل دخولك مرة ثانية.");
-            throw new DiscordApiException((int)resp.StatusCode, $"خطأ من خادم حُفرة ({(int)resp.StatusCode}).");
+            string detail = "";
+            try { detail = JsonDocument.Parse(text).RootElement.GetProperty("message").GetString(); } catch { }
+            throw new DiscordApiException((int)resp.StatusCode, $"خطأ من خادم حُفرة ({(int)resp.StatusCode}). {detail}");
         }
 
         private static LoginResult Parse(string json)
