@@ -9,7 +9,7 @@ namespace Hufra.Core.Discord
     /// مخطِّط محلي بدون ذكاء اصطناعي ولا مفاتيح: يفهم الطلبات الشائعة بالعربي (قوالب سيرفرات، قوائم رتب ورومات، حذف).
     /// أضعف من Gemini في الطلبات الحرة، لكنه يعمل فوراً بدون إعداد.
     /// </summary>
-    public static class LocalPlanner
+    public static partial class LocalPlanner
     {
         public const string Help =
             "أفهم بدون مفتاح طلبات مثل:\n" +
@@ -66,100 +66,6 @@ namespace Hufra.Core.Discord
         private static DiscordAction Voice(string name, string category, List<string> visibleTo = null) =>
             new DiscordAction { Type = "create_channel", Kind = "voice", Name = name, Category = category, VisibleTo = visibleTo };
 
-        // ---------- القوالب ----------
-        private static (string[] Roles, List<DiscordAction> Structure) Template(string kind)
-        {
-            string[] staffRoles = { "👑 مالك", "🛡️ إدارة", "⚔️ مشرف" };
-            var staff = new List<string> { "👑 مالك", "🛡️ إدارة", "⚔️ مشرف" };
-            var writers = new List<string> { "👑 مالك", "🛡️ إدارة" };
-
-            var s = new List<DiscordAction>();
-            string[] roles;
-
-            void Info(string cat)
-            {
-                s.Add(Cat(cat));
-                s.Add(Txt("👋・الترحيب", cat, true, writers));
-                s.Add(Txt("📜・القوانين", cat, true, writers));
-                s.Add(Txt("📢・الإعلانات", cat, true, writers));
-            }
-            void StaffArea()
-            {
-                s.Add(Cat("🔒 الإدارة", staff));
-                s.Add(Txt("🔒・شات-الإدارة", "🔒 الإدارة", visibleTo: staff));
-                s.Add(Txt("📋・سجل-القرارات", "🔒 الإدارة", visibleTo: staff));
-                s.Add(Voice("🔊 اجتماع الإدارة", "🔒 الإدارة", staff));
-            }
-
-            switch (kind)
-            {
-                case "store":
-                    roles = staffRoles.Concat(new[] { "💼 بائع", "🛒 عميل", "👤 عضو" }).ToArray();
-                    Info("📌 معلومات");
-                    s.Add(Cat("🛒 المتجر"));
-                    s.Add(Txt("🛍️・المنتجات", "🛒 المتجر", true, writers));
-                    s.Add(Txt("💳・الأسعار", "🛒 المتجر", true, writers));
-                    s.Add(Txt("🎫・فتح-تذكرة", "🛒 المتجر"));
-                    s.Add(Txt("⭐・التقييمات", "🛒 المتجر"));
-                    s.Add(Cat("💬 المجتمع"));
-                    s.Add(Txt("💬・الشات-العام", "💬 المجتمع"));
-                    s.Add(Txt("📷・الصور", "💬 المجتمع"));
-                    s.Add(Cat("🔊 الصوتيات"));
-                    s.Add(Voice("🔊 عام", "🔊 الصوتيات"));
-                    s.Add(Voice("🔊 الدعم", "🔊 الصوتيات"));
-                    StaffArea();
-                    break;
-                case "gaming":
-                    roles = staffRoles.Concat(new[] { "🎮 لاعب محترف", "🎮 لاعب", "👤 عضو" }).ToArray();
-                    Info("📌 معلومات");
-                    s.Add(Cat("🎮 الألعاب"));
-                    s.Add(Txt("🎮・نقاش-الألعاب", "🎮 الألعاب"));
-                    s.Add(Txt("🔎・دور-فريق", "🎮 الألعاب"));
-                    s.Add(Txt("🏆・الإنجازات", "🎮 الألعاب"));
-                    s.Add(Txt("🎬・مقاطع", "🎮 الألعاب"));
-                    s.Add(Cat("💬 المجتمع"));
-                    s.Add(Txt("💬・الشات-العام", "💬 المجتمع"));
-                    s.Add(Txt("😂・ميمز", "💬 المجتمع"));
-                    s.Add(Cat("🔊 الصوتيات"));
-                    s.Add(Voice("🔊 غرفة 1", "🔊 الصوتيات"));
-                    s.Add(Voice("🔊 غرفة 2", "🔊 الصوتيات"));
-                    s.Add(Voice("🔊 غرفة 3", "🔊 الصوتيات"));
-                    StaffArea();
-                    break;
-                case "education":
-                    roles = staffRoles.Concat(new[] { "📚 مدرّس", "🎓 طالب", "👤 عضو" }).ToArray();
-                    Info("📌 معلومات");
-                    s.Add(Cat("📚 الدراسة"));
-                    s.Add(Txt("📚・المواد", "📚 الدراسة", true, writers));
-                    s.Add(Txt("❓・الأسئلة", "📚 الدراسة"));
-                    s.Add(Txt("📝・الواجبات", "📚 الدراسة"));
-                    s.Add(Txt("📎・الملفات", "📚 الدراسة"));
-                    s.Add(Cat("💬 المجتمع"));
-                    s.Add(Txt("💬・الشات-العام", "💬 المجتمع"));
-                    s.Add(Cat("🔊 القاعات"));
-                    s.Add(Voice("🔊 قاعة 1", "🔊 القاعات"));
-                    s.Add(Voice("🔊 قاعة 2", "🔊 القاعات"));
-                    s.Add(Voice("🔊 مذاكرة جماعية", "🔊 القاعات"));
-                    StaffArea();
-                    break;
-                default: // community
-                    roles = staffRoles.Concat(new[] { "⭐ عضو مميّز", "👤 عضو" }).ToArray();
-                    Info("📌 معلومات");
-                    s.Add(Cat("💬 المجتمع"));
-                    s.Add(Txt("💬・الشات-العام", "💬 المجتمع"));
-                    s.Add(Txt("📷・الصور", "💬 المجتمع"));
-                    s.Add(Txt("😂・ميمز", "💬 المجتمع"));
-                    s.Add(Txt("🤖・الأوامر", "💬 المجتمع"));
-                    s.Add(Cat("🔊 الصوتيات"));
-                    s.Add(Voice("🔊 عام", "🔊 الصوتيات"));
-                    s.Add(Voice("🔊 غرفة 1", "🔊 الصوتيات"));
-                    s.Add(Voice("🔊 غرفة 2", "🔊 الصوتيات"));
-                    StaffArea();
-                    break;
-            }
-            return (roles, s);
-        }
-
         // ---------- الخطة ----------
         public static DiscordPlan Plan(string text, IEnumerable<string> existingRoles, IEnumerable<string> existingChannels)
         {
@@ -180,16 +86,23 @@ namespace Hufra.Core.Discord
             }
 
             // 2) قالب سيرفر كامل
-            bool wantServer = Has(n, "سيرفر", "server") && Has(n, "سو", "جهز", "سوي", "انشئ", "اعمل", "ابي", "ابغى", "ابغا", "اريد", "create", "make");
-            string template = Has(n, "متجر", "ستور", "بيع", "تجاره", "store", "shop") ? "store"
-                : Has(n, "قيمنق", "قيمز", "العاب", "gaming", "game", "كلان") ? "gaming"
-                : Has(n, "تعليم", "دراسه", "دورات", "مدرسه", "جامعه", "study", "education") ? "education"
-                : wantServer || Has(n, "مجتمع", "community") ? "community" : null;
+            bool intent = HasIntent(n);
+            bool saysServer = Has(n, "سيرفر", "server");
+            bool wantServer = saysServer && intent;
+            var detected = (intent || saysServer) ? DetectTemplate(n) : null;
+            string template = detected != null ? detected.Key
+                : wantServer || (intent && Has(n, "مجتمع", "community")) ? "community" : null;
 
             bool hasList = Regex.IsMatch(text ?? "", @"[:：]\s*\S");
+            // محادثة عادية (تحية / مساعدة / قوالب / شكر) بدون نية تنفيذ
+            if (!intent && !saysServer && !hasList)
+            {
+                var c = Chat(n);
+                if (c != null) { plan.Message = c; return plan; }
+            }
             bool wantRooms = Has(n, "رومات", "روم", "قنوات", "شاتات", "قنواتي", "channels", "تنظيم", "نظم", "رتب", "رول", "roles");
             // طلب عام بدون قائمة («سوي رومات»، «نظم السيرفر») → قالب مجتمع جاهز
-            if (template == null && !hasList && wantRooms && !Has(n, "احذف", "امسح")) template = "community";
+            if (template == null && !hasList && wantRooms && intent && !Has(n, "احذف", "امسح")) template = "community";
 
             if (template != null && !Regex.IsMatch(n, @"(رتب|رول|روم|قنوات|قناه|شات)\w*\s*[:：]"))
             {
@@ -207,8 +120,9 @@ namespace Hufra.Core.Discord
                     if (!haveCh.Contains(key)) plan.Actions.Add(a);
                 }
                 plan.Actions.Add(new DiscordAction { Type = "reorder_roles", Order = roles.ToList() });
-                string tname = template == "store" ? "متجر" : template == "gaming" ? "ألعاب" : template == "education" ? "تعليمي" : "مجتمع";
-                plan.Message = "جهّزت لك سيرفر كامل بقالب «" + tname + "»: رتب مرتّبة، رومات منظّمة، قسم إدارة خاص، وغرف صوتية. راجع الخطة ثم نفّذ.";
+                var tpl = Catalog.First(x => x.Key == template);
+                int nr = plan.Actions.Count(x => x.Type == "create_role"), nc = plan.Actions.Count(x => x.Type == "create_channel"), ng = plan.Actions.Count(x => x.Type == "create_category");
+                plan.Message = $"تمام! جهّزت لك {tpl.Pitch}.\nالخطة: {nr} رتبة، {ng} أقسام، {nc} روم (مع قسم إدارة خاص). راجعها ثم اضغط تنفيذ.";
                 return plan;
             }
 
@@ -225,7 +139,7 @@ namespace Hufra.Core.Discord
 
             if (segs.Count == 0)
             {
-                plan.Message = "ما فهمت الطلب بدون الذكاء الاصطناعي.\n\n" + Help;
+                plan.Message = Chat(n) ?? ("ما فهمت الطلب بالضبط.\n" + Help + "\n\nجرّب كتابة «القوالب» عشان أعرض لك أنواع السيرفرات الجاهزة.");
                 return plan;
             }
 
