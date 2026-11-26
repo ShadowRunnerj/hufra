@@ -66,6 +66,89 @@ namespace Hufra.Core.Discord
         private static DiscordAction Voice(string name, string category, List<string> visibleTo = null) =>
             new DiscordAction { Type = "create_channel", Kind = "voice", Name = name, Category = category, VisibleTo = visibleTo };
 
+
+        // ---------- طلبات العنصر الواحد ----------
+        private static readonly Dictionary<string, string> ColorWords = new Dictionary<string, string>
+        {
+            ["احمر"] = "#e74c3c", ["ازرق"] = "#3498db", ["اخضر"] = "#2ecc71", ["اصفر"] = "#f1c40f", ["برتقالي"] = "#e67e22",
+            ["بنفسجي"] = "#9b59b6", ["وردي"] = "#e91e63", ["رمادي"] = "#95a5a6", ["ذهبي"] = "#f1c40f", ["ابيض"] = "#ecf0f1",
+            ["اسود"] = "#2c3e50", ["بني"] = "#8d5524", ["سماوي"] = "#1abc9c",
+        };
+
+        private static DiscordPlan SingleItems(string text, HashSet<string> haveRoles, HashSet<string> haveCh)
+        {
+            var plan = new DiscordPlan();
+            var rx = new Regex(
+                @"(?:سو|سوي|سوّ|انشئ|أنشئ|اعمل|ضيف|أضف|اضف|زود)\s+(?:لي\s+|لنا\s+)?(?:ال)?(رتبه|رتبة|رول|روم|قناه|قناة|شات|فئه|فئة|كاتيجوري|قسم)\s*(صوتي\w*|نصي\w*|فويس)?\s+(.+?)(?=\s+(?:و\s*)?(?:سو|سوي|سوّ|انشئ|أنشئ|اعمل|ضيف|أضف|اضف|زود)\s+(?:لي\s+|لنا\s+)?(?:ال)?(?:رتب|رول|روم|قناه|قناة|شات|فئه|فئة|كاتيجوري|قسم)|$)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var newRoleNames = new List<string>();
+
+            foreach (Match m in rx.Matches(text ?? ""))
+            {
+                string kind = Norm(m.Groups[1].Value), sub = Norm(m.Groups[2].Value), tail = m.Groups[3].Value.Trim();
+
+                // اسم العنصر = ما قبل أول كلمة تعديل
+                var mod = Regex.Match(tail, @"\s+(?:بلون|لونها|لونه|لون|للقراءه|للقراءة|قراءه|قراءة|في\s+(?:ال)?(?:فئه|فئة|قسم|كاتيجوري)|داخل|تحت|خاص|خاصه|خاصة|صلاحيه|صلاحيات|بصلاحيه|بصلاحيات)\b", RegexOptions.IgnoreCase);
+                string name = (mod.Success ? tail.Substring(0, mod.Index) : tail).Trim().Trim('"', '«', '»', '“', '”', '.', ':', '،', ',');
+                string rest = mod.Success ? tail.Substring(mod.Index) : "";
+                if (name.Length == 0 || name.Length > 80) continue;
+                string nrest = Norm(rest);
+
+                bool isRole = Has(kind, "رتبه", "رول");
+                bool isCategory = Has(kind, "فئه", "كاتيجوري", "قسم");
+                bool isVoice = Has(sub, "صوت", "فويس") || Has(kind, "فويس");
+
+                if (isRole)
+                {
+                    if (haveRoles.Contains(name)) continue;
+                    string color = "#95a5a6";
+                    foreach (var kv in ColorWords) if (Has(nrest, kv.Key)) { color = kv.Value; break; }
+                    var hex = Regex.Match(rest, @"#[0-9a-fA-F]{6}");
+                    if (hex.Success) color = hex.Value;
+                    var perms = PermsFor(name);
+                    plan.Actions.Add(new DiscordAction
+                    {
+                        Type = "create_role", Name = name, Color = color,
+                        Permissions = perms.ToList(), Hoist = perms.Length > 0, Mentionable = perms.Length > 0,
+                    });
+                    newRoleNames.Add(name);
+                    continue;
+                }
+
+                if (isCategory)
+                {
+                    string key = name.ToLowerInvariant().Replace(' ', '-');
+                    if (!haveCh.Contains(key)) plan.Actions.Add(new DiscordAction { Type = "create_category", Name = name });
+                    continue;
+                }
+
+                // روم: فئة اختيارية «في فئة X»
+                string category = null;
+                var cm = Regex.Match(rest, @"(?:في|داخل|تحت)\s+(?:ال)?(?:فئه|فئة|قسم|كاتيجوري)?\s*(.+?)(?=\s+(?:للقراءه|للقراءة|قراءه|قراءة|خاص|خاصه|خاصة|بلون)|$)", RegexOptions.IgnoreCase);
+                if (cm.Success) category = cm.Groups[1].Value.Trim().Trim('"', '«', '»', '.', '،');
+                if (!string.IsNullOrEmpty(category))
+                {
+                    string ckey = category.ToLowerInvariant().Replace(' ', '-');
+                    if (!haveCh.Contains(ckey) && !plan.Actions.Any(a => a.Type == "create_category" && a.Name == category))
+                        plan.Actions.Add(new DiscordAction { Type = "create_category", Name = category });
+                }
+
+                var pv = Regex.Match(rest, @"خاص\w*\s*(?:ب\w*)?\s*(.+?)(?=\s+(?:للقراءه|للقراءة|قراءه|قراءة|بلون|في\s|داخل|تحت)|$)", RegexOptions.IgnoreCase);
+                List<string> visible = pv.Success ? SplitList(pv.Groups[1].Value) : null;
+                bool ro = Has(nrest, "للقراءه", "قراءه فقط");
+
+                string chKey = name.ToLowerInvariant().Replace(' ', '-');
+                if (haveCh.Contains(chKey)) continue;
+                plan.Actions.Add(isVoice ? Voice(name, category, visible) : Txt(name, category, ro, null, visible));
+            }
+
+            if (plan.Actions.Count == 0) return null;
+            plan.Message = plan.Actions.Count == 1
+                ? "تمام، طلب بسيط: " + plan.Actions[0].Describe() + "\nراجع الخطة ثم نفّذ."
+                : $"فهمت طلبك ({plan.Actions.Count} عناصر). راجع الخطة ثم نفّذ.";
+            return plan;
+        }
+
         // ---------- الخطة ----------
         public static DiscordPlan Plan(string text, IEnumerable<string> existingRoles, IEnumerable<string> existingChannels)
         {
@@ -124,6 +207,13 @@ namespace Hufra.Core.Discord
                 int nr = plan.Actions.Count(x => x.Type == "create_role"), nc = plan.Actions.Count(x => x.Type == "create_channel"), ng = plan.Actions.Count(x => x.Type == "create_category");
                 plan.Message = $"تمام! جهّزت لك {tpl.Pitch}.\nالخطة: {nr} رتبة، {ng} أقسام، {nc} روم (مع قسم إدارة خاص). راجعها ثم اضغط تنفيذ.";
                 return plan;
+            }
+
+            // 2.5) عنصر واحد: «سوّ رتبة X لون أحمر»، «سوّ روم صوتي X في فئة Y»، «سوّ فئة X»
+            if (!hasList)
+            {
+                var one = SingleItems(text, haveRoles, haveCh);
+                if (one != null && one.Actions.Count > 0) return one;
             }
 
             // 3) قوائم: رتب / رومات / صوت
