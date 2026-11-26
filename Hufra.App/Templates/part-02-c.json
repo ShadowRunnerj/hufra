@@ -1,0 +1,311 @@
+[
+{
+"id": 31,
+"name": "سيرفر ألعاب PlayStation",
+"category": "الألعاب والقيمنق",
+"icon": "🎮",
+"colors": ["#1e3a8a", "#05060f"],
+"description": "مجتمع لاعبي بلايستيشن: توصيات الحصريات، البحث عن زملاء للتروفيات، أخبار PS Plus وجلسات PS5 الجماعية.",
+"roles": [
+{"name": "🔷 مدير بلايستيشن", "color": "#2563eb", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🛡️ مشرف المنصة", "color": "#0ea5e9", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "🎖️ مدير الفعاليات", "color": "#f59e0b", "hoist": true, "permissions": ["ManageMessages","ManageEvents","ModerateMembers","ManageThreads"]},
+{"name": "🏆 صائد البلاتينيوم", "color": "#e5e7eb", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🎧 لاعب PS5", "color": "#6366f1", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "🕹️ لاعب PS4", "color": "#14b8a6", "hoist": false, "permissions": ["AttachFiles","EmbedLinks"]},
+{"name": "🔹 عضو جديد", "color": "#94a3b8", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🔷 صالة PlayStation", "visibleTo": null, "channels": [
+{"name": "🔷・أهلاً-باللاعب", "type": "text", "readOnly": true, "topic": "مرحباً بلاعبي بلايستيشن", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📋・نظام-الصالة", "type": "text", "readOnly": true, "topic": "قواعد المجتمع", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "🗞️・أخبار-سوني-والإصدارات", "type": "text", "readOnly": true, "topic": "أخبار PS Plus والحصريات والتحديثات", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🧾・أضف-معرفك-PSN", "type": "text", "readOnly": false, "topic": "شارك معرفك للصداقة واللعب", "visibleTo": null, "slowmode": 30, "purpose": null}
+]},
+{"name": "🏆 مكتبة الحصريات", "visibleTo": null, "channels": [
+{"name": "🕷️・سبايدرمان-وإنسومنياك", "type": "text", "readOnly": false, "topic": "ألعاب استوديو إنسومنياك", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "⚔️・غود-أوف-وور-وهورايزن", "type": "text", "readOnly": false, "topic": "الحصريات القصصية", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🧟・ذا-لاست-أوف-أس", "type": "text", "readOnly": false, "topic": "نقاش وتحليل", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏁・جران-توريزمو-وأونتشارتد", "type": "text", "readOnly": false, "topic": "سباقات ومغامرات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏆・تروفيات-وبلاتينيوم", "type": "text", "readOnly": false, "topic": "شارك تروفياتك ودليل الصيد", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🛒・عروض-بلايستيشن-ستور", "type": "text", "readOnly": false, "topic": "تخفيضات رسمية فقط", "visibleTo": null, "slowmode": 10, "purpose": null}
+]},
+{"name": "🎧 جلسات اللعب", "visibleTo": null, "channels": [
+{"name": "🤝・أبحث-عن-زميل-لعب", "type": "text", "readOnly": false, "topic": "دعوات اللعب التعاوني", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🎬・مقاطع-شير-بلاي", "type": "text", "readOnly": false, "topic": "مقاطعك من زر المشاركة", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💡・اقتراحات-الصالة", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "🎮・دردشة-اللاعبين", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 جلسة PS5", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 جلسة PS4", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 فريق البلاتينيوم", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 غرفة الإدارة الزرقاء", "visibleTo": ["🔷 مدير بلايستيشن","🛡️ مشرف المنصة","🎖️ مدير الفعاليات"], "channels": [
+{"name": "🗒️・سجل-الصالة", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎫・دعم-وبلاغات-PSN", "type": "text", "readOnly": false, "topic": "تذاكر الدعم", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع الإدارة الزرقاء", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) لا تنشر بيانات حساب PSN أو كلمات المرور؛ الإدارة لن تطلبها منك أبداً.",
+"2) مبادلة التروفيات والحسابات المشتركة ممنوعة لأنها تخالف شروط سوني.",
+"3) انشر مقاطع الشير بلاي في قناتها مع اسم اللعبة.",
+"4) سبويلر الحصريات يوضع داخل وسم السبويلر لأول 30 يوماً من الإصدار.",
+"5) لا تدخل في حروب المنصات؛ كل المنصات تحترم هنا.",
+"6) عروض المتجر تكون من متجر PlayStation الرسمي فقط.",
+"7) في جلسات اللعب الصوتية لا تُحرج زميلاً ولا تلوم في الفريق.",
+"8) احترم خصوصية أصدقائك ولا تشارك لقطات تظهر بياناتهم."
+],
+"welcome": "أهلاً {user}! 🔷 أضف معرفك في أضف-معرفك-PSN، وحدد منصتك PS5 أو PS4، وابدأ بالبحث عن زميل لعب أو صيد بلاتينيوم جديد.",
+"goodbye": "غادر {user} صالة بلايستيشن. نتمنى لك بلاتينيوم في كل لعبة وعودة قريبة. 🏆",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام فعاليات", "نظام رتب تلقائية"],
+"protection": ["مستوى التحقق: متوسط", "فلتر المحتوى: تفعيل للجميع", "منع روابط الدعوات الخارجية", "حذف روابط الاحتيال المنتحلة لـ PSN تلقائياً"],
+"instructions": "فعّل نظام الرتب التلقائية لإعطاء رتبة PS5 أو PS4 عند التفاعل، واربط قناة دعم-وبلاغات-PSN بالتذاكر. أنشئ فعالية شهرية لسباق الحصول على بلاتينيوم لعبة محددة."
+},
+{
+"id": 32,
+"name": "سيرفر ألعاب Xbox",
+"category": "الألعاب والقيمنق",
+"icon": "🟢",
+"colors": ["#14532d", "#04100a"],
+"description": "مجتمع لاعبي إكس بوكس: Game Pass، الأحداث الجماعية، تحديات الإنجازات وتنسيق جلسات الكونسول والكلاود.",
+"roles": [
+{"name": "🟢 مدير إكس بوكس", "color": "#10b981", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🛡️ حارس الكونسول", "color": "#84cc16", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "🎟️ مدير جيم باس", "color": "#a3e635", "hoist": true, "permissions": ["ManageMessages","ManageEvents","ManageThreads","ModerateMembers"]},
+{"name": "💎 صائد الإنجازات", "color": "#22d3ee", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🎮 لاعب Series X", "color": "#f97316", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "☁️ لاعب كلاود", "color": "#60a5fa", "hoist": false, "permissions": ["AttachFiles","EmbedLinks"]},
+{"name": "🔰 لاعب مبتدئ", "color": "#9ca3af", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🟢 بوابة إكس بوكس", "visibleTo": null, "channels": [
+{"name": "🟢・استقبال-الغاميرز", "type": "text", "readOnly": true, "topic": "مرحباً باللاعبين الجدد", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📘・لائحة-النادي", "type": "text", "readOnly": true, "topic": "قواعد المجتمع", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📺・أخبار-مايكروسوفت-والمعارض", "type": "text", "readOnly": true, "topic": "أخبار Game Pass والتحديثات", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🪪・قائمة-الجيمرتاغ", "type": "text", "readOnly": false, "topic": "شارك الجيمرتاغ للإضافة", "visibleTo": null, "slowmode": 30, "purpose": null}
+]},
+{"name": "🎟️ عالم جيم باس", "visibleTo": null, "channels": [
+{"name": "🆕・جديد-جيم-باس", "type": "text", "readOnly": false, "topic": "الألعاب القادمة والمغادرة", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🌌・هيلو-وستاريفيلد", "type": "text", "readOnly": false, "topic": "ألعاب الحصريات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏎️・فورزا-وقيرز", "type": "text", "readOnly": false, "topic": "سباقات ومعارك", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏆・إنجازات-وجيمرسكور", "type": "text", "readOnly": false, "topic": "تحديات الإنجازات", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "☁️・لعب-الكلاود", "type": "text", "readOnly": false, "topic": "ألعاب السحابة على الجوال والتلفاز", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🎙️・لقطات-من-الكونسول", "type": "text", "readOnly": false, "topic": "لقطات ومقاطع", "visibleTo": null, "slowmode": 10, "purpose": null}
+]},
+{"name": "🎮 ساحة الجلسات", "visibleTo": null, "channels": [
+{"name": "🤝・نبحث-عن-فريق", "type": "text", "readOnly": false, "topic": "دعوات اللعب", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🎪・فعاليات-الأسبوع", "type": "text", "readOnly": false, "topic": "جداول الفعاليات", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "💡・رأيكم-بتطوير-النادي", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "🥤・سوالف-الكونسول", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 جلسة Series X", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 جلسة كلاود", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 صيد الإنجازات", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 مكتب الإدارة الخضراء", "visibleTo": ["🟢 مدير إكس بوكس","🛡️ حارس الكونسول","🎟️ مدير جيم باس"], "channels": [
+{"name": "🧾・سجل-النادي", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎫・دعم-الحسابات", "type": "text", "readOnly": false, "topic": "تذاكر الدعم", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع الإدارة الخضراء", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) لا تشارك بيانات حسابك على مايكروسوفت أو رموز الاسترداد مع أحد.",
+"2) بيع وشراء اشتراكات Game Pass بطرق غير رسمية ممنوع منعاً باتاً.",
+"3) إنجازات الغش ورفع الإنجازات بالبوستنغ المتفق عليه يحتاج إعلاناً مسبقاً في قناته.",
+"4) انشر لقطات الكونسول في قناتها وليس في قنوات النقاش.",
+"5) لا تقارن المنصات للاستهزاء بمجتمعات أخرى.",
+"6) لا مساحة هنا لمشاركة كراكات أو ألعاب مقرصنة.",
+"7) أعلن عن طلب الفريق بتحديد اللعبة والوضع والوقت.",
+"8) سلوك الميكروفون: لا ضجيج خلفية ولا موسيقى مزعجة في الجلسات."
+],
+"welcome": "حياك الله {user}! 🟢 اكتب جيمرتاغك في قائمة-الجيمرتاغ، وابحث عن لعبتك في عالم جيم باس، وانضم إلى جلسة اليوم.",
+"goodbye": "أُغلق جهاز {user}. نتمنى لك ساعات لعب ممتعة وإنجازات كثيرة. 💎",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام فعاليات", "نظام مسابقات"],
+"protection": ["مستوى التحقق: متوسط", "فلتر المحتوى: تفعيل للجميع", "منع الروابط للأعضاء الجدد", "حظر روابط الاحتيال بانتحال Xbox Live"],
+"instructions": "ضع رسائل تفاعل لاختيار المنصة، واربط قناة دعم-الحسابات بنظام التذاكر، وحدد يوماً أسبوعياً لجلسة جماعية في فعاليات-الأسبوع. أنشئ مسابقة شهرية لأعلى جيمرسكور."
+},
+{
+"id": 33,
+"name": "سيرفر ألعاب Nintendo",
+"category": "الألعاب والقيمنق",
+"icon": "🍄",
+"colors": ["#9f1239", "#0f0a12"],
+"description": "مجتمع محبي نينتندو: Switch، ماريو وزيلدا وبوكيمون، تبادل أكواد الأصدقاء، السبلاتون وسوبر سماش والأمبيبو.",
+"roles": [
+{"name": "🍄 مدير مملكة الفطر", "color": "#ef4444", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "⭐ حارس النجوم", "color": "#fbbf24", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "🎪 منظم المسابقات", "color": "#22c55e", "hoist": true, "permissions": ["ManageMessages","ManageEvents","ManageThreads","ModerateMembers"]},
+{"name": "🧢 بطل ماريو", "color": "#3b82f6", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🗡️ مغامر هايرول", "color": "#14b8a6", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "🔴 مدرب بوكيمون", "color": "#f43f5e", "hoist": false, "permissions": ["AttachFiles","EmbedLinks"]},
+{"name": "🎮 لاعب سويتش", "color": "#a1a1aa", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🍄 قلعة الترحيب", "visibleTo": null, "channels": [
+{"name": "🍄・أهلاً-في-المملكة", "type": "text", "readOnly": true, "topic": "مرحباً بلاعبي نينتندو", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📜・لوحة-القوانين", "type": "text", "readOnly": true, "topic": "قواعد المملكة", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📺・نينتندو-دايركت-وأخبار", "type": "text", "readOnly": true, "topic": "العروض الرسمية والإصدارات", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🎴・رتب-الشخصيات", "type": "text", "readOnly": true, "topic": "اختر شخصيتك المفضلة", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🎮 عوالم نينتندو", "visibleTo": null, "channels": [
+{"name": "🏎️・ماريو-كارت-والعوالم", "type": "text", "readOnly": false, "topic": "ماريو وسباقاته", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🗡️・زيلدا-ولغز-المعابد", "type": "text", "readOnly": false, "topic": "رحلات هايرول", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "⚡・بوكيمون-وتبادل-المخلوقات", "type": "text", "readOnly": false, "topic": "تبادل ومعارك", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🦑・سبلاتون-وحروب-الحبر", "type": "text", "readOnly": false, "topic": "تشكيلات ومباريات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🥊・سوبر-سماش-براذرز", "type": "text", "readOnly": false, "topic": "التقنيات والمباريات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏝️・أنيمال-كروسينغ", "type": "text", "readOnly": false, "topic": "جزيرتك وزيارتها", "visibleTo": null, "slowmode": 3, "purpose": null}
+]},
+{"name": "🧩 ركن الأصدقاء", "visibleTo": null, "channels": [
+{"name": "🔢・أكواد-الأصدقاء", "type": "text", "readOnly": false, "topic": "شارك رمز صديق سويتش", "visibleTo": null, "slowmode": 30, "purpose": null},
+{"name": "🧸・مقتنيات-أميبو", "type": "text", "readOnly": false, "topic": "تجميع التماثيل", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💡・اقتراحات-المملكة", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "🌟・دردشة-نينتندو", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 غرفة ماريو", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة هايرول", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 ساحة السماش", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 غرفة العرش", "visibleTo": ["🍄 مدير مملكة الفطر","⭐ حارس النجوم","🎪 منظم المسابقات"], "channels": [
+{"name": "📒・سجل-المملكة", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎫・دعم-اللاعبين", "type": "text", "readOnly": false, "topic": "تذاكر الدعم", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع الحراس", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) المجتمع مناسب لجميع الأعمار؛ لا يسمح بأي محتوى غير لائق أو ألفاظ نابية.",
+"2) لا نناقش المحاكيات وروابط تحميل الألعاب المقرصنة أو نسخ الـ ROM.",
+"3) تسريبات الألعاب والأخبار غير الرسمية توضع في وسم تسريبات.",
+"4) رموز الأصدقاء تُنشر في قناتها فقط ولا تُطلب في الخاص من الغرباء.",
+"5) في المعارك الأونلاين احترم خصمك وتجنب الإزعاج المتعمد.",
+"6) لا نقبل أي نقاش عن حروب الكونسولات ضد منصات أخرى.",
+"7) التبادلات (بوكيمون وأنيمال كروسينغ) على مسؤولية الأطراف دون تدخل الإدارة في الخلافات.",
+"8) اطلب إذن ولي الأمر إن كنت صغيراً قبل مشاركة أي معلومة شخصية."
+],
+"welcome": "أهلاً {user}! 🍄 خذ رتبة شخصيتك من رتب-الشخصيات، وانشر رمز صديقك في أكواد-الأصدقاء، ولا تنسَ أن تسأل عن ماريو كارت الليلة.",
+"goodbye": "غادر {user} المملكة. نتمنى لك مغامرات ممتعة وأن تجد نجمة في طريقك دائماً. ⭐",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام فعاليات", "نظام مسابقات"],
+"protection": ["مستوى التحقق: عالٍ", "فلتر المحتوى: تفعيل للجميع", "منع روابط الـ ROM وملفات التحميل", "قفل الصور للأعضاء الجدد حتى ظهور رتبة"],
+"instructions": "ضع رسائل رتب الشخصيات في رتب-الشخصيات، وفعّل فلتر الألفاظ بصرامة لأن المجتمع يضم أعماراً صغيرة، وأنشئ ليلة ماريو كارت أسبوعية في نظام الفعاليات."
+},
+{
+"id": 34,
+"name": "سيرفر ألعاب Steam",
+"category": "الألعاب والقيمنق",
+"icon": "💨",
+"colors": ["#0f172a", "#1e1b4b"],
+"description": "مجتمع ستيم: مراقبة التخفيضات، توصيات ألعاب المكتبة، مراجعات اللاعبين، تبادل الدعوات وورشة المودات.",
+"roles": [
+{"name": "💨 مالك المكتبة", "color": "#38bdf8", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🛡️ أمين المكتبة", "color": "#a3e635", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","ViewAuditLog"]},
+{"name": "📝 محرر المراجعات", "color": "#f59e0b", "hoist": true, "permissions": ["ManageMessages","ManageThreads","ManageEvents","ModerateMembers"]},
+{"name": "💯 جامع الألعاب", "color": "#c084fc", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🎟️ صياد التخفيضات", "color": "#f43f5e", "hoist": false, "permissions": ["AttachFiles","EmbedLinks"]},
+{"name": "📚 مستخدم ستيم", "color": "#64748b", "hoist": false, "permissions": ["AttachFiles"]},
+{"name": "🆕 حساب جديد", "color": "#9ca3af", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "💨 مدخل المكتبة", "visibleTo": null, "channels": [
+{"name": "💨・استقبال-ستيم", "type": "text", "readOnly": true, "topic": "مرحباً بمستخدمي ستيم", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📑・ميثاق-المستخدمين", "type": "text", "readOnly": true, "topic": "قواعد المجتمع", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📣・نشرة-الموسم-والتخفيضات", "type": "text", "readOnly": true, "topic": "مواعيد التخفيضات الكبرى وأحداث ستيم", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🔗・أضف-ستيم-آيدي", "type": "text", "readOnly": false, "topic": "شارك رابط ملفك للصداقة", "visibleTo": null, "slowmode": 30, "purpose": null}
+]},
+{"name": "🛒 المتجر والمكتبة", "visibleTo": null, "channels": [
+{"name": "🏷️・تخفيضات-اليوم", "type": "text", "readOnly": false, "topic": "عروض رسمية من متجر ستيم", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🎁・ألعاب-مجانية-لفترة-محدودة", "type": "text", "readOnly": false, "topic": "عروض مجانية رسمية", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "⭐・مراجعات-اللاعبين", "type": "text", "readOnly": false, "topic": "مراجعاتك للألعاب", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🧭・توصيات-حسب-النوع", "type": "text", "readOnly": false, "topic": "اطلب توصية وفق ميزانيتك ونوعك المفضل", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🏅・إنجازات-وشارات-ستيم", "type": "text", "readOnly": false, "topic": "الشارات والبطاقات", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🛠️・ورشة-ستيم-ووركشوب", "type": "text", "readOnly": false, "topic": "مودات وورشة", "visibleTo": null, "slowmode": 5, "purpose": null}
+]},
+{"name": "🎮 مجتمع اللعب", "visibleTo": null, "channels": [
+{"name": "🤝・لاعبون-للتعاون", "type": "text", "readOnly": false, "topic": "لعب جماعي", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🔧・استكشاف-أخطاء-ستيم", "type": "text", "readOnly": false, "topic": "مشاكل التحميل والكراش", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "💡・اقتراحات-المكتبة", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "💬・ثرثرة-اللاعبين", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 لعب جماعي", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة الأصدقاء", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 سهرة ستيم ديك", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 مكتب الأمناء", "visibleTo": ["💨 مالك المكتبة","🛡️ أمين المكتبة","📝 محرر المراجعات"], "channels": [
+{"name": "🗄️・سجل-المكتبة", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎫・دعم-الحسابات-والاحتيال", "type": "text", "readOnly": false, "topic": "تذاكر الدعم", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع الأمناء", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) لا تنشر أي رابط ستيم غير رسمي؛ روابط الاحتيال وصفحات تسجيل الدخول المزيفة تعني حظراً فورياً.",
+"2) ممنوع تبادل المفاتيح أو بيعها خارج قنوات الإدارة، وتحذف أي عروض مشبوهة.",
+"3) المراجعات تذكر اللعبة والساعات والمنصة، ولا تحتوي على سبويلر دون وسم.",
+"4) لا تطلب إضافة ملفك بالخاص من غرباء؛ استخدم قناة أضف-ستيم-آيدي.",
+"5) التخفيضات المنشورة يجب أن تكون من المتجر الرسمي ومعها نسبة الخصم وتاريخ الانتهاء.",
+"6) المودات من الورشة الرسمية فقط، لا نقبل ملفات تحميل خارجية.",
+"7) لا تبدأ نقاشات عدائية عن أفضل متجر ألعاب.",
+"8) لا تشارك بيانات حسابك أو بطاقتك أو رموز Steam Guard."
+],
+"welcome": "أهلاً {user}! 💨 ضع رابط ملفك في أضف-ستيم-آيدي، وتفقد تخفيضات-اليوم، وإذا طلبت توصية فاذكر ميزانيتك ونوع اللعبة.",
+"goodbye": "ترك {user} المكتبة. نتمنى لك مكتبة ممتلئة وعروضاً لا تفوتك. 💯",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام تصويت", "نظام رتب تلقائية"],
+"protection": ["مستوى التحقق: عالٍ", "فلتر الروابط: حظر الروابط المنتحلة لستيم", "منع روابط الدعوات الخارجية", "حد الروابط للحسابات الجديدة"],
+"instructions": "فعّل فلتر روابط الاحتيال بقائمة سوداء لنطاقات ستيم المزيفة، وأنشئ استطلاع شهري لأفضل لعبة اشتريناها، واربط قناة دعم-الحسابات-والاحتيال بالتذاكر."
+},
+{
+"id": 35,
+"name": "سيرفر ألعاب جماعي",
+"category": "الألعاب والقيمنق",
+"icon": "👥",
+"colors": ["#6d28d9", "#0a0614"],
+"description": "مجتمع للألعاب الجماعية والحفلات: Among Us، Jackbox، Fall Guys، Pummel Party وغيرها، لسهرات الأصدقاء الجماعية.",
+"roles": [
+{"name": "🎉 مدير السهرة", "color": "#f472b6", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🎈 منسق الحفلات", "color": "#fb923c", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ManageEvents","ViewAuditLog"]},
+{"name": "🎲 مقدم الألعاب", "color": "#facc15", "hoist": true, "permissions": ["ManageMessages","ManageEvents","ModerateMembers","PrioritySpeaker"]},
+{"name": "🥳 نجم السهرة", "color": "#a78bfa", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🎮 لاعب متحمس", "color": "#2dd4bf", "hoist": false, "permissions": ["AttachFiles","EmbedLinks"]},
+{"name": "🙋 ضيف", "color": "#9ca3af", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🎉 مدخل الحفلة", "visibleTo": null, "channels": [
+{"name": "🎉・أهلاً-بالضيوف", "type": "text", "readOnly": true, "topic": "مرحباً بضيوف السهرة", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📝・آداب-السهرة", "type": "text", "readOnly": true, "topic": "قواعد اللعب الجماعي", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📆・جدول-السهرات", "type": "text", "readOnly": true, "topic": "مواعيد الجلسات والألعاب", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🎟️・احجز-مقعدك", "type": "text", "readOnly": false, "topic": "سجّل للجلسة القادمة", "visibleTo": null, "slowmode": 10, "purpose": null}
+]},
+{"name": "🎲 ألعاب الحفلات", "visibleTo": null, "channels": [
+{"name": "🕵️・أمونغ-أس-وأشباهها", "type": "text", "readOnly": false, "topic": "ألعاب الخداع والاستنتاج", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🧠・جاكبوكس-وأسئلة-الحفلات", "type": "text", "readOnly": false, "topic": "ألعاب الأسئلة والرسم", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏃・فول-جايز-وألعاب-الفوضى", "type": "text", "readOnly": false, "topic": "سباقات ومنافسات خفيفة", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🧩・ألعاب-التعاون-والألغاز", "type": "text", "readOnly": false, "topic": "Overcooked وPortal 2 وغيرها", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🃏・ألعاب-الطاولة-أونلاين", "type": "text", "readOnly": false, "topic": "أونو، شطرنج، لودو", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🤣・لقطات-ضحك-من-السهرة", "type": "text", "readOnly": false, "topic": "أطرف المواقف", "visibleTo": null, "slowmode": 10, "purpose": null}
+]},
+{"name": "🔊 قاعات السهر", "visibleTo": null, "channels": [
+{"name": "🙋・نبحث-عن-لاعبين", "type": "text", "readOnly": false, "topic": "اطلب لاعبين للجلسة", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💡・أفكار-ألعاب-جديدة", "type": "text", "readOnly": false, "topic": "اقترح لعبة جماعية", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "🥂・سوالف-الضيوف", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 القاعة الكبرى", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة الأصدقاء 1", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة الأصدقاء 2", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 ركن الهدوء", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 كواليس التنظيم", "visibleTo": ["🎉 مدير السهرة","🎈 منسق الحفلات","🎲 مقدم الألعاب"], "channels": [
+{"name": "🗒️・سجل-السهرات", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎫・شكاوى-وبلاغات", "type": "text", "readOnly": false, "topic": "تذاكر الشكاوى", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع المنظمين", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) هدفنا المتعة الجماعية؛ لا تفسد الجلسة بالتخريب المتعمد أو كشف الأدوار في ألعاب الخداع.",
+"2) إن انسحبت من جلسة التزم بإعلام المنظم لتعويضك بلاعب بديل.",
+"3) لا تتحدث عن أحداث اللعبة الجارية خارج الغرفة الصوتية.",
+"4) الإساءة لأي شخص بسبب مستواه في اللعب ممنوعة تماماً.",
+"5) في ألعاب الأسئلة والرسم يمنع أي محتوى مسيء أو غير لائق.",
+"6) من يتكرر غيابه عن الحجز بدون عذر يُوقف عن الحجز لأسبوع.",
+"7) غرف الأصدقاء تُحجز بالتوافق ولا يُفرض الانضمام على أحد.",
+"8) لا تُنشر لقطات الصوت أو الشاشة لضيف دون موافقته."
+],
+"welcome": "أهلاً بالضيف {user}! 🎉 اطّلع على جدول-السهرات، احجز مقعدك في احجز-مقعدك، وتعال إلى القاعة الكبرى لنبدأ.",
+"goodbye": "غادر {user} الحفلة. نتمنى أن تعود قريباً ليكتمل العدد في الجلسة القادمة. 🎈",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام فعاليات", "نظام مسابقات"],
+"protection": ["مستوى التحقق: منخفض", "فلتر المحتوى: تفعيل للجميع", "منع الدعوات الخارجية", "حد الميزة الصوتية للجدد: كتم تلقائي لأول 5 دقائق"],
+"instructions": "أنشئ فعاليات السهرات الأسبوعية في نظام الفعاليات وأعلنها في جدول-السهرات، واستخدم احجز-مقعدك لجمع العدد. اربط شكاوى-وبلاغات بنظام التذاكر."
+}
+]

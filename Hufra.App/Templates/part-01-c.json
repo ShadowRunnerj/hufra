@@ -1,0 +1,1921 @@
+[
+ {
+  "id": 11,
+  "name": "سيرفر Counter-Strike 2",
+  "category": "الألعاب والقيمنق",
+  "icon": "💣",
+  "colors": [
+   "#4c1d95",
+   "#080410"
+  ],
+  "description": "مجتمع CS2: بريميير وفيسيت، سيرفرات المجتمع، سكنات وسوق الستيم، ونيدز لاعبين للمنافسة.",
+  "roles": [
+   {
+    "name": "🏴 قائد الإرهابيين",
+    "color": "#f1c40f",
+    "hoist": true,
+    "permissions": [
+     "ManageGuild",
+     "ManageChannels",
+     "ManageRoles",
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MentionEveryone",
+     "ManageEvents",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "🚓 قائد مكافحة الإرهاب",
+    "color": "#3498db",
+    "hoist": true,
+    "permissions": [
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "🧾 مسؤول المحتوى والسكنات",
+    "color": "#e67e22",
+    "hoist": true,
+    "permissions": [
+     "ModerateMembers",
+     "ManageMessages",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageNicknames"
+    ]
+   },
+   {
+    "name": "🌟 غلوبال إيليت",
+    "color": "#e74c3c",
+    "hoist": false,
+    "permissions": [
+     "ManageEvents",
+     "CreatePublicThreads",
+     "EmbedLinks",
+     "AttachFiles",
+     "PrioritySpeaker"
+    ]
+   },
+   {
+    "name": "🔶 ماستر جارديان",
+    "color": "#9b59b6",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🔹 سيلفر إيليت",
+    "color": "#1abc9c",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "⚪ ضيف الدست",
+    "color": "#95a5a6",
+    "hoist": false,
+    "permissions": []
+   }
+  ],
+  "categories": [
+   {
+    "name": "📌 نقطة الإحياء",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔰・خذ-سلاحك",
+      "type": "text",
+      "readOnly": true,
+      "topic": "ترحيب",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "welcome"
+     },
+     {
+      "name": "📙・قوانين-الجولة",
+      "type": "text",
+      "readOnly": true,
+      "topic": "القوانين",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "rules"
+     },
+     {
+      "name": "📣・تحديث-فالف",
+      "type": "text",
+      "readOnly": true,
+      "topic": "تحديثات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "announcements"
+     },
+     {
+      "name": "🧑‍💻・ستيم-آي-دي",
+      "type": "text",
+      "readOnly": false,
+      "topic": "اربط حسابك",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "💥 المنافسة",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🎯・بحث-عن-5v5",
+      "type": "text",
+      "readOnly": false,
+      "topic": "فريق كامل",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🏟️・فيسيت-وبريمير",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تجميع لاعبين",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💣・مراجعة-ديما",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تحليل ديموهات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "📈・الرتب-والإيلو",
+      "type": "text",
+      "readOnly": false,
+      "topic": "مستوى اللاعبين",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🗺️ الخرائط والتكتيكات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔥・ميراج-وإنفرنو",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تكتيكات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🏜️・دست2-وأنكوبيس",
+      "type": "text",
+      "readOnly": false,
+      "topic": "ستراتيجيات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🧠・نيدز-ورميات",
+      "type": "text",
+      "readOnly": false,
+      "topic": "قاذفات ومولوتوف",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🔦・سموك-وفلاش",
+      "type": "text",
+      "readOnly": false,
+      "topic": "لقطات تكتيكية",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🎨 السكنات والسوق",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔪・سكنات-سكاكين",
+      "type": "text",
+      "readOnly": false,
+      "topic": "نقاش السكنات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💲・سوق-الستيم",
+      "type": "text",
+      "readOnly": false,
+      "topic": "أسعار السكنات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "general"
+     },
+     {
+      "name": "🧰・تريد-آمن",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تحذيرات التبادل",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💡・اقتراح-خريطة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "اقتراحات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "suggestions"
+     }
+    ]
+   },
+   {
+    "name": "🔊 الصوتيات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔊 نقطة الإحياء",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💣 فريق T",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🛡️ فريق CT",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎙️ تحليل مباريات",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🔒 غرفة الحكام",
+    "visibleTo": [
+     "🏴 قائد الإرهابيين",
+     "🚓 قائد مكافحة الإرهاب",
+     "🧾 مسؤول المحتوى والسكنات"
+    ],
+    "channels": [
+     {
+      "name": "📋・سجل-الحكام",
+      "type": "text",
+      "readOnly": false,
+      "topic": "سجلات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "logs"
+     },
+     {
+      "name": "🧰・نقاش-الحكم",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تنسيق",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎫・تظلم-وتقارير",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تذاكر",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "tickets"
+     },
+     {
+      "name": "🔊 اجتماع الحكام",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   }
+  ],
+  "rules": [
+   "1) لا غش ولا Spinbot، ويُحظر فوراً من الفريق.",
+   "2) نقل التريد بالسوق عبر حساب موثق فقط.",
+   "3) الحديث الصوتي بعد الجولة فقط، والكولات أولوية أثناء الجولة.",
+   "4) لا طلب سكنات مجاناً أو تسول بالرابط.",
+   "5) ممنوع التقليل من مستوى اللاعبين الأقل.",
+   "6) تشارك روابط ستيم عبر القناة المخصصة."
+  ],
+  "welcome": "جاهز؟ اربط ستيم آي دي، ابحث عن فريقك في بحث-عن-5v5، وتدرّب على الرميات في قناة نيدز-ورميات.",
+  "goodbye": "نزل أحد اللاعبين من الخريطة. تفوّق بحس عالٍ في الجولات القادمة.",
+  "systems": [
+   "نظام اقتراحات",
+   "نظام تذاكر",
+   "سجلات الإدارة",
+   "نظام فعاليات",
+   "نظام تصويت"
+  ],
+  "protection": [
+   "مستوى التحقق: متوسط",
+   "فلتر المحتوى: فحص الرسائل",
+   "منع روابط تريد الستيم المشبوهة",
+   "تقييد المنشن الجماعي"
+  ],
+  "instructions": "أضف بوت لربط ستيم، وجهّز أسبوعاً تنافسياً داخلياً، وحذّر أعضاء السوق من سرقة التريد بتثبيت رسالة تحذير."
+ },
+ {
+  "id": 12,
+  "name": "سيرفر League of Legends",
+  "category": "الألعاب والقيمنق",
+  "icon": "🧙",
+  "colors": [
+   "#6d28d9",
+   "#0a0516"
+  ],
+  "description": "مجتمع ليغ أوف ليجندز: دوري عشوائي، ترتيب فردي/ثنائي، التحليل بالديو وأخبار الميتا والتشامبيونز.",
+  "roles": [
+   {
+    "name": "👑 المستدعي الأعلى",
+    "color": "#f1c40f",
+    "hoist": true,
+    "permissions": [
+     "ManageGuild",
+     "ManageChannels",
+     "ManageRoles",
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MentionEveryone",
+     "ManageEvents",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "⚖️ حكم الفجوة",
+    "color": "#e74c3c",
+    "hoist": true,
+    "permissions": [
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "🧙 مدرب التحليل",
+    "color": "#16a085",
+    "hoist": true,
+    "permissions": [
+     "ModerateMembers",
+     "ManageMessages",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageNicknames"
+    ]
+   },
+   {
+    "name": "💠 تشالنجر",
+    "color": "#9b59b6",
+    "hoist": false,
+    "permissions": [
+     "ManageEvents",
+     "CreatePublicThreads",
+     "EmbedLinks",
+     "AttachFiles",
+     "PrioritySpeaker"
+    ]
+   },
+   {
+    "name": "💎 دايموند",
+    "color": "#3498db",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🥇 جولد",
+    "color": "#f39c12",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🪵 آيرون",
+    "color": "#95a5a6",
+    "hoist": false,
+    "permissions": []
+   }
+  ],
+  "categories": [
+   {
+    "name": "📌 قاعة المستدعين",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔮・تعويذة-الدخول",
+      "type": "text",
+      "readOnly": true,
+      "topic": "ترحيب",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "welcome"
+     },
+     {
+      "name": "📕・ميثاق-الفجوة",
+      "type": "text",
+      "readOnly": true,
+      "topic": "القوانين",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "rules"
+     },
+     {
+      "name": "📣・باتش-الأسبوع",
+      "type": "text",
+      "readOnly": true,
+      "topic": "تحديثات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "announcements"
+     },
+     {
+      "name": "🏷️・ريجن-وسيرفرك",
+      "type": "text",
+      "readOnly": false,
+      "topic": "اختر المنطقة",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "⚔️ الصفوف والتنافس",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🛡️・توب-لين",
+      "type": "text",
+      "readOnly": false,
+      "topic": "نقاش الخط العلوي",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🌲・جنقل",
+      "type": "text",
+      "readOnly": false,
+      "topic": "المسارات والكامب",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🪄・ميد-لين",
+      "type": "text",
+      "readOnly": false,
+      "topic": "الخط الأوسط",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🏹・إيه-دي-سي-وسبورت",
+      "type": "text",
+      "readOnly": false,
+      "topic": "الخط السفلي",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🔎・ديو-ورانكد",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تجميع ثنائي",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🏆 دور ومنافسة",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🏆・كاستم-الأسبوع",
+      "type": "text",
+      "readOnly": false,
+      "topic": "ألعاب مخصصة",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "general"
+     },
+     {
+      "name": "📊・تحليل-الريبلاي",
+      "type": "text",
+      "readOnly": false,
+      "topic": "أرسل ريبلاي",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎙️・التشامبيون-الأسبوعي",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تشامبيون الأسبوع",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🧩・بيلد-وروانز",
+      "type": "text",
+      "readOnly": false,
+      "topic": "الحشوات والعناصر",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🎞️ الترفيه والمجتمع",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "😂・لقطات-اللعب",
+      "type": "text",
+      "readOnly": false,
+      "topic": "مقاطع",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎨・فان-آرت",
+      "type": "text",
+      "readOnly": false,
+      "topic": "رسومات الأبطال",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🛒・سكنات-وبلو-إسنس",
+      "type": "text",
+      "readOnly": false,
+      "topic": "عروض",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💡・اقتراحات-الحكم",
+      "type": "text",
+      "readOnly": false,
+      "topic": "اقتراحات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "suggestions"
+     }
+    ]
+   },
+   {
+    "name": "🔊 الصوتيات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔊 قاعة الانتظار",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "⚔️ فريق 5v5",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🧙 تدريب الجنقل",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🏆 غرفة الكاستم",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🔒 مجلس الحكام",
+    "visibleTo": [
+     "👑 المستدعي الأعلى",
+     "⚖️ حكم الفجوة",
+     "🧙 مدرب التحليل"
+    ],
+    "channels": [
+     {
+      "name": "📋・سجل-المجلس",
+      "type": "text",
+      "readOnly": false,
+      "topic": "سجلات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "logs"
+     },
+     {
+      "name": "🧰・غرفة-الحكام",
+      "type": "text",
+      "readOnly": false,
+      "topic": "نقاش",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎫・طلب-تحليل-وتظلم",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تذاكر",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "tickets"
+     },
+     {
+      "name": "🔊 اجتماع المجلس",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   }
+  ],
+  "rules": [
+   "1) لا تلوم اللاعبين ولا تنفخ الخط بإهانة.",
+   "2) نشر الريبلاي يجب أن يكون مع الرانك والبطل.",
+   "3) لا طلب رفع حسابات ولا ترحيل الرانك بمقابل.",
+   "4) الحوارات بين الخطوط تبقى داخل قنواتها.",
+   "5) ممنوع الكتابة بكلمات مسيئة في أسماء المستدعين.",
+   "6) احترم الحكّام عند القرار في الكاستم."
+  ],
+  "welcome": "مرحباً أيها المستدعي! اختر منطقتك، وسجّل خطك المفضل، وانضم لكاستم الأسبوع لمواجهة الأقوى.",
+  "goodbye": "غادر المستدعي القاعة. تشجّع وعُد بالتشامبيون القادم.",
+  "systems": [
+   "نظام اقتراحات",
+   "نظام تذاكر",
+   "سجلات الإدارة",
+   "نظام فعاليات",
+   "نظام رتب تلقائية"
+  ],
+  "protection": [
+   "مستوى التحقق: متوسط",
+   "فلتر المحتوى: فحص كامل",
+   "تحذير تلقائي عند الإهانة المتكررة",
+   "حد الروابط: ذوو الرتب فقط"
+  ],
+  "instructions": "أنشئ رتب الدرجات عبر أزرار، وسجّل قناة الكاستم بموعد ثابت، وأضف قناة لتحليل الريبلاي فقط لأصحاب رتبة مدرب التحليل."
+ },
+ {
+  "id": 13,
+  "name": "سيرفر Rocket League",
+  "category": "الألعاب والقيمنق",
+  "icon": "🚀",
+  "colors": [
+   "#5b21b6",
+   "#0b0514"
+  ],
+  "description": "مجتمع روكيت ليغ: سيارات تتقاذف الكرة، مستويات الصعود، ورشة الإير وتبادل الأغراض وبطولات 3v3.",
+  "roles": [
+   {
+    "name": "🚀 قائد الملعب",
+    "color": "#f1c40f",
+    "hoist": true,
+    "permissions": [
+     "ManageGuild",
+     "ManageChannels",
+     "ManageRoles",
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MentionEveryone",
+     "ManageEvents",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "🏁 حكم الأرينا",
+    "color": "#e74c3c",
+    "hoist": true,
+    "permissions": [
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "🔧 ميكانيكي الفريق",
+    "color": "#e67e22",
+    "hoist": true,
+    "permissions": [
+     "ModerateMembers",
+     "ManageMessages",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageNicknames"
+    ]
+   },
+   {
+    "name": "🌌 سوبر سونيك ليجند",
+    "color": "#9b59b6",
+    "hoist": false,
+    "permissions": [
+     "ManageEvents",
+     "CreatePublicThreads",
+     "EmbedLinks",
+     "AttachFiles",
+     "PrioritySpeaker"
+    ]
+   },
+   {
+    "name": "⚡ غراند تشامب",
+    "color": "#3498db",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🔥 دايموند",
+    "color": "#1abc9c",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🚗 برونز",
+    "color": "#95a5a6",
+    "hoist": false,
+    "permissions": []
+   }
+  ],
+  "categories": [
+   {
+    "name": "📌 مدخل الأرينا",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🏟️・أهلاً-بالسائقين",
+      "type": "text",
+      "readOnly": true,
+      "topic": "ترحيب",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "welcome"
+     },
+     {
+      "name": "📒・نظام-الأرينا",
+      "type": "text",
+      "readOnly": true,
+      "topic": "القوانين",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "rules"
+     },
+     {
+      "name": "📣・تحديثات-الموسم",
+      "type": "text",
+      "readOnly": true,
+      "topic": "الأخبار",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "announcements"
+     },
+     {
+      "name": "🧾・ارفع-رانكك",
+      "type": "text",
+      "readOnly": false,
+      "topic": "الترتيب",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🚀 الأداء والمهارات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "✈️・إير-دريبل",
+      "type": "text",
+      "readOnly": false,
+      "topic": "نصائح الهواء",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🧠・الريكفري-والمركز",
+      "type": "text",
+      "readOnly": false,
+      "topic": "التمركز",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎯・التسديد-والفلب",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تقنيات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🛠️・إعدادات-الكاميرا",
+      "type": "text",
+      "readOnly": false,
+      "topic": "إعدادات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🤝 الفرق",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🧩・ابحث-عن-زميل",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تجميع الفرق",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🏆・بطولة-3v3",
+      "type": "text",
+      "readOnly": false,
+      "topic": "بطولات داخلية",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "general"
+     },
+     {
+      "name": "🏅・نتائج-ودرجات",
+      "type": "text",
+      "readOnly": false,
+      "topic": "الدرجات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🔁・تدريب-مخصص",
+      "type": "text",
+      "readOnly": false,
+      "topic": "لعب مخصص",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🎒 الأغراض",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🚗・تبادل-العجلات",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تريد",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎨・ديكور-السيارات",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تصاميم",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🛍️・متجر-العناصر",
+      "type": "text",
+      "readOnly": false,
+      "topic": "الأسعار",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💡・اقتراحات-الأرينا",
+      "type": "text",
+      "readOnly": false,
+      "topic": "اقتراحات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "suggestions"
+     }
+    ]
+   },
+   {
+    "name": "🔊 الصوتيات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔊 غرفة الانتظار",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🚀 دويو",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🚀 ثلاثي",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🔧 مختبر الإير",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🔒 برج التحكم",
+    "visibleTo": [
+     "🚀 قائد الملعب",
+     "🏁 حكم الأرينا",
+     "🔧 ميكانيكي الفريق"
+    ],
+    "channels": [
+     {
+      "name": "📋・سجل-التحكم",
+      "type": "text",
+      "readOnly": false,
+      "topic": "سجلات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "logs"
+     },
+     {
+      "name": "🧰・نقاش-الحكام",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تنسيق",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎫・تظلمات-البطولة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تذاكر",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "tickets"
+     },
+     {
+      "name": "🔊 اجتماع الحكام",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   }
+  ],
+  "rules": [
+   "1) لا تخرّب المباراة وتتعمد تسجيل أهداف ذاتية.",
+   "2) احترم الخصوم في البطولات.",
+   "3) التبادل بالأغراض يتم بعد ذكر القيمة وبوجود شاهد.",
+   "4) أي نتيجة ترفق بصورة من آخر الشاشة.",
+   "5) ممنوع بيع الحسابات.",
+   "6) لا بث ولا مشاركة روابط خارجية."
+  ],
+  "welcome": "أهلاً بالسائق! سجّل رتبتك، اطلب زميلاً، وتعلّم الإير دريبل في قناة إير-دريبل، ثم انضم إلى بطولة 3v3.",
+  "goodbye": "خرجت من الملعب. نترك الباب مفتوحاً لتعود وتسجل هدفك القادم.",
+  "systems": [
+   "نظام اقتراحات",
+   "نظام تذاكر",
+   "سجلات الإدارة",
+   "نظام فعاليات",
+   "نظام تصويت"
+  ],
+  "protection": [
+   "مستوى التحقق: متوسط",
+   "فلتر المحتوى: فحص الأعضاء الجدد",
+   "منع الروابط الخارجية للأعضاء الجدد",
+   "حد الرسائل في القنوات الرئيسية"
+  ],
+  "instructions": "جهّز جدول بطولة 3v3 على الأحداث، ثبّت دليل المهارات، وأنشئ رتب رانك عبر أزرار."
+ },
+ {
+  "id": 14,
+  "name": "سيرفر Apex Legends",
+  "category": "الألعاب والقيمنق",
+  "icon": "🦅",
+  "colors": [
+   "#4c1d95",
+   "#08030d"
+  ],
+  "description": "مجتمع أبكس ليجندز: ترتيب الصيادين، اختيار الأبطال، تريوهات الرانكد، وميتا الأسلحة بالموسم.",
+  "roles": [
+   {
+    "name": "🦅 بطل الأبطال",
+    "color": "#f1c40f",
+    "hoist": true,
+    "permissions": [
+     "ManageGuild",
+     "ManageChannels",
+     "ManageRoles",
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MentionEveryone",
+     "ManageEvents",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "🛡️ قائد الصيادين",
+    "color": "#e74c3c",
+    "hoist": true,
+    "permissions": [
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "📡 منسق الرانكد",
+    "color": "#e67e22",
+    "hoist": true,
+    "permissions": [
+     "ModerateMembers",
+     "ManageMessages",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageNicknames"
+    ]
+   },
+   {
+    "name": "🔥 بريداتور",
+    "color": "#ff6b35",
+    "hoist": false,
+    "permissions": [
+     "ManageEvents",
+     "CreatePublicThreads",
+     "EmbedLinks",
+     "AttachFiles",
+     "PrioritySpeaker"
+    ]
+   },
+   {
+    "name": "💠 ماستر",
+    "color": "#9b59b6",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🔶 بلاتينيوم",
+    "color": "#1abc9c",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🎯 برونز المبتدئ",
+    "color": "#95a5a6",
+    "hoist": false,
+    "permissions": []
+   }
+  ],
+  "categories": [
+   {
+    "name": "📌 نقطة الهبوط",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🪂・أهلاً-بالأبطال",
+      "type": "text",
+      "readOnly": true,
+      "topic": "ترحيب",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "welcome"
+     },
+     {
+      "name": "📘・ميثاق-الأبطال",
+      "type": "text",
+      "readOnly": true,
+      "topic": "القوانين",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "rules"
+     },
+     {
+      "name": "📣・نوتس-الموسم",
+      "type": "text",
+      "readOnly": true,
+      "topic": "تحديثات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "announcements"
+     },
+     {
+      "name": "🧭・المنصة-والكونترول",
+      "type": "text",
+      "readOnly": false,
+      "topic": "اختر",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "⚔️ الأبطال والأسلحة",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🧬・أبطال-الميتا",
+      "type": "text",
+      "readOnly": false,
+      "topic": "أفضل الأبطال",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🔫・أسلحة-الموسم",
+      "type": "text",
+      "readOnly": false,
+      "topic": "ميتا الأسلحة",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎯・حركة-وستراف",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تقنيات الحركة",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🛠️・حساسية-وستيك",
+      "type": "text",
+      "readOnly": false,
+      "topic": "إعدادات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🏆 الرانكد",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🧩・تريو-رانكد",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تجميع",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🏆・أرينا-وتحديات",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تحديات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "general"
+     },
+     {
+      "name": "🗺️・أبعاد-الخرائط",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تكتيكات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "📈・رحلة-البريداتور",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تقدم",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🎬 المحتوى",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🎞️・أفضل-الكلاتش",
+      "type": "text",
+      "readOnly": false,
+      "topic": "مقاطع",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎨・سكنات-وحزم",
+      "type": "text",
+      "readOnly": false,
+      "topic": "العروض",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "📣・إعلانات-الأحداث",
+      "type": "text",
+      "readOnly": false,
+      "topic": "فعاليات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💡・اقتراحات-الصيادين",
+      "type": "text",
+      "readOnly": false,
+      "topic": "اقتراحات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "suggestions"
+     }
+    ]
+   },
+   {
+    "name": "🔊 الصوتيات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔊 بوابة الهبوط",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🪂 تريو 1",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🪂 تريو 2",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🏆 رانكد",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🔒 غرفة القيادة",
+    "visibleTo": [
+     "🦅 بطل الأبطال",
+     "🛡️ قائد الصيادين",
+     "📡 منسق الرانكد"
+    ],
+    "channels": [
+     {
+      "name": "📋・سجل-القيادة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "سجلات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "logs"
+     },
+     {
+      "name": "🧰・نقاش-القادة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تنسيق",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎫・شكاوى-الرانكد",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تذاكر",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "tickets"
+     },
+     {
+      "name": "🔊 اجتماع القادة",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   }
+  ],
+  "rules": [
+   "1) الحديث عن الهاكرز يكون بلا اتهامات دون دليل.",
+   "2) إتيكيت الفريق: أنقذ زميلك ولا تهجره.",
+   "3) لا تنشر روابط الدعوات ولا الاعلانات.",
+   "4) لا للألفاظ العنصرية أو السخرية بالأسماء.",
+   "5) بيع الحسابات محظور.",
+   "6) تعلن عن نتائج الأرينا بدقة وبصورة."
+  ],
+  "welcome": "مرحباً بالصياد! اختر منصتك، ابحث عن تريو، وراجع ميتا الأسلحة قبل النزول إلى كينغز كانيون.",
+  "goodbye": "غادر صياد الملعب. نترك لك كوبون إحياء إن عدت.",
+  "systems": [
+   "نظام اقتراحات",
+   "نظام تذاكر",
+   "سجلات الإدارة",
+   "نظام فعاليات",
+   "نظام رتب تلقائية"
+  ],
+  "protection": [
+   "مستوى التحقق: متوسط",
+   "فلتر المحتوى: فحص الكل",
+   "حد الروابط: يتطلب رتبة",
+   "تقييد المنشن للجميع"
+  ],
+  "instructions": "فعّل رتب الرانك عبر أزرار، ضع قاعدة قناة تريو-رانكد بسلو مود قصير، وحدد موعداً ثابتاً لليلة الأرينا."
+ },
+ {
+  "id": 15,
+  "name": "سيرفر Rust",
+  "category": "الألعاب والقيمنق",
+  "icon": "🛢️",
+  "colors": [
+   "#581c87",
+   "#0a0410"
+  ],
+  "description": "مجتمع راست: قواعد الغارات، الكلانات، حمل السيرفرات، أسواق الموارد وتحالفات الجزيرة.",
+  "roles": [
+   {
+    "name": "☢️ سيد الجزيرة",
+    "color": "#f1c40f",
+    "hoist": true,
+    "permissions": [
+     "ManageGuild",
+     "ManageChannels",
+     "ManageRoles",
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MentionEveryone",
+     "ManageEvents",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "🔨 قائد الغارات",
+    "color": "#e74c3c",
+    "hoist": true,
+    "permissions": [
+     "KickMembers",
+     "BanMembers",
+     "ModerateMembers",
+     "ManageMessages",
+     "ViewAuditLog",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageThreads"
+    ]
+   },
+   {
+    "name": "🛠️ مدير السيرفر",
+    "color": "#e67e22",
+    "hoist": true,
+    "permissions": [
+     "ModerateMembers",
+     "ManageMessages",
+     "MoveMembers",
+     "MuteMembers",
+     "ManageNicknames"
+    ]
+   },
+   {
+    "name": "🏚️ زعيم كلان",
+    "color": "#9b59b6",
+    "hoist": false,
+    "permissions": [
+     "ManageEvents",
+     "CreatePublicThreads",
+     "EmbedLinks",
+     "AttachFiles",
+     "PrioritySpeaker"
+    ]
+   },
+   {
+    "name": "🪓 ناجٍ قديم",
+    "color": "#3498db",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🔦 مستوطن",
+    "color": "#2ecc71",
+    "hoist": false,
+    "permissions": [
+     "EmbedLinks",
+     "AttachFiles",
+     "UseExternalEmojis",
+     "CreatePublicThreads",
+     "AddReactions"
+    ]
+   },
+   {
+    "name": "🤕 عارٍ على الشاطئ",
+    "color": "#95a5a6",
+    "hoist": false,
+    "permissions": []
+   }
+  ],
+  "categories": [
+   {
+    "name": "📌 الشاطئ",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🏝️・ظهور-على-الشاطئ",
+      "type": "text",
+      "readOnly": true,
+      "topic": "ترحيب",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "welcome"
+     },
+     {
+      "name": "📜・قانون-الغابة",
+      "type": "text",
+      "readOnly": true,
+      "topic": "القوانين",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "rules"
+     },
+     {
+      "name": "📣・وايب-السيرفر",
+      "type": "text",
+      "readOnly": true,
+      "topic": "الوايب والتحديثات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "announcements"
+     },
+     {
+      "name": "🔗・اتصال-وتحديث",
+      "type": "text",
+      "readOnly": false,
+      "topic": "IP وحالة السيرفر",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🏚️ القواعد والغارات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🧱・تصاميم-القواعد",
+      "type": "text",
+      "readOnly": false,
+      "topic": "أفضل التصاميم",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💥・غارات-وانتقام",
+      "type": "text",
+      "readOnly": false,
+      "topic": "توثيق الغارات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🧪・حسابات-الغارة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "حساب الموارد",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🛡️・دفاع-القاعدة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "حماية",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🪓 الموارد والتجارة",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "⛏️・أماكن-الموارد",
+      "type": "text",
+      "readOnly": false,
+      "topic": "خرائط",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💰・سوق-الجزيرة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "بيع وشراء",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "general"
+     },
+     {
+      "name": "🔫・أفضل-الأسلحة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "مقارنات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🛢️・نقاط-النفط",
+      "type": "text",
+      "readOnly": false,
+      "topic": "العمليات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🤝 الكلانات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "⚔️・حروب-الكلانات",
+      "type": "text",
+      "readOnly": false,
+      "topic": "إعلان الحروب",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🧑‍🤝‍🧑・تجنيد-كلان",
+      "type": "text",
+      "readOnly": false,
+      "topic": "الانضمام",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🕊️・تحالفات-وهدنات",
+      "type": "text",
+      "readOnly": false,
+      "topic": "دبلوماسية",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💡・اقتراحات-الوايب",
+      "type": "text",
+      "readOnly": false,
+      "topic": "اقتراحات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "suggestions"
+     }
+    ]
+   },
+   {
+    "name": "🔊 الصوتيات",
+    "visibleTo": null,
+    "channels": [
+     {
+      "name": "🔊 الشاطئ",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🏚️ قاعدة الكلان",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "💥 غرفة الغارة",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🕊️ طاولة التحالفات",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   },
+   {
+    "name": "🔒 غرفة الأدمن",
+    "visibleTo": [
+     "☢️ سيد الجزيرة",
+     "🔨 قائد الغارات",
+     "🛠️ مدير السيرفر"
+    ],
+    "channels": [
+     {
+      "name": "📋・سجل-الأدمن",
+      "type": "text",
+      "readOnly": false,
+      "topic": "سجلات",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "logs"
+     },
+     {
+      "name": "🧰・نقاش-الإدارة",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تنسيق",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     },
+     {
+      "name": "🎫・بلاغات-غش",
+      "type": "text",
+      "readOnly": false,
+      "topic": "تذاكر",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": "tickets"
+     },
+     {
+      "name": "🔊 اجتماع الأدمن",
+      "type": "voice",
+      "readOnly": false,
+      "topic": "",
+      "visibleTo": null,
+      "slowmode": 0,
+      "purpose": null
+     }
+    ]
+   }
+  ],
+  "rules": [
+   "1) الغارة على اللاعبين مسموحة، لكن ممنوع الغش أو الـ ESP.",
+   "2) إعلان الحرب بين الكلانات يكون في قناته مع إثبات.",
+   "3) ممنوع المطاردة خارج اللعبة أو كشف معلومات شخصية.",
+   "4) التحالفات تُسجل رسمياً.",
+   "5) لا بيع أو مبادلة أغراض بمال حقيقي.",
+   "6) بلاغ الغش بالفيديو فقط."
+  ],
+  "welcome": "استيقظت عارياً على الشاطئ! اقرأ قانون الغابة، اعثر على كلان أو ابنِ قاعدتك، وتابع حالة السيرفر في قناة اتصال-وتحديث.",
+  "goodbye": "غادر أحد الناجين الجزيرة. ربما بقيت قاعدتك قائمة إلى أن تعود.",
+  "systems": [
+   "نظام اقتراحات",
+   "نظام تذاكر",
+   "سجلات الإدارة",
+   "نظام بلاغات",
+   "نظام تقديمات"
+  ],
+  "protection": [
+   "مستوى التحقق: متوسط",
+   "فلتر المحتوى: فحص الرسائل",
+   "مراقبة روابط الدعوات",
+   "تقييد رفع الملفات للأعضاء الجدد"
+  ],
+  "instructions": "اربط رسالة تحديث تلقائي بحالة السيرفر، وفعّل نموذج تجنيد للكلانات، وسجل موعد الوايب في قناة وايب-السيرفر."
+ }
+]

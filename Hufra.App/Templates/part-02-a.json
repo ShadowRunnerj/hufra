@@ -1,0 +1,312 @@
+[
+{
+"id": 21,
+"name": "سيرفر ألعاب الرعب",
+"category": "الألعاب والقيمنق",
+"icon": "🎃",
+"colors": ["#3b0a0a", "#0a0a0f"],
+"description": "مجتمع لعشاق ألعاب الرعب: جلسات صراخ جماعية، صيد أشباح، مناقشة القصص المخيفة وترشيح أرعب الإصدارات.",
+"roles": [
+{"name": "👁️ سيّد الظلام", "color": "#b91c1c", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🕯️ حارس الكوابيس", "color": "#ea580c", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "🔦 مرشد الأقبية", "color": "#eab308", "hoist": true, "permissions": ["ManageMessages","ModerateMembers","ManageThreads","MoveMembers"]},
+{"name": "🎃 صائد الأشباح", "color": "#a855f7", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","Stream","PrioritySpeaker"]},
+{"name": "🩸 ناجٍ مخضرم", "color": "#dc2626", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","Stream"]},
+{"name": "🦇 ناجٍ", "color": "#64748b", "hoist": false, "permissions": ["AttachFiles","Stream"]},
+{"name": "👻 زائر القبو", "color": "#94a3b8", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🚪 بوابة القبو", "visibleTo": null, "channels": [
+{"name": "🚪・بوابة-القبو", "type": "text", "readOnly": true, "topic": "أهلاً بك، ادخل بحذر ولا تلتفت خلفك", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📜・ميثاق-الظلام", "type": "text", "readOnly": true, "topic": "قواعد المجتمع قبل أول جلسة رعب", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "🕸️・نشرة-الكوابيس", "type": "text", "readOnly": true, "topic": "إصدارات جديدة وعروض وفعاليات ليلية", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🎭・اختر-نوع-رعبك", "type": "text", "readOnly": true, "topic": "تفاعل لاختيار رتبة النوع: نفسي، دموي، خارق", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🎮 مقابر الألعاب", "visibleTo": null, "channels": [
+{"name": "🧟・ريزدنت-إيفل-وسايلنت-هيل", "type": "text", "readOnly": false, "topic": "الكلاسيكيات والريميكات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "👻・فاسموفوبيا-وصيد-الأشباح", "type": "text", "readOnly": false, "topic": "أدلة الأشباح والمعدات والخرائط", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🔪・ديد-باي-ديلايت-وأساطيره", "type": "text", "readOnly": false, "topic": "القاتل والناجون والبيرك", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🐻・ليالي-فنف", "type": "text", "readOnly": false, "topic": "الدمى المتحركة وأسرارها", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏚️・رعب-الإندي-المنسي", "type": "text", "readOnly": false, "topic": "ألعاب صغيرة ومرعبة خارج الأضواء", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "💡・ترشيحات-ومقترحات-الرعب", "type": "text", "readOnly": false, "topic": "اقترح لعبة أو ميزة للمجتمع", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"}
+]},
+{"name": "🩸 غرف الصراخ", "visibleTo": null, "channels": [
+{"name": "😱・لقطات-الجامب-سكير", "type": "text", "readOnly": false, "topic": "انشر أقوى لحظات الفزع مع تحذير", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🧩・حل-ألغاز-القصص", "type": "text", "readOnly": false, "topic": "نظريات الأحداث والنهايات الخفية", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🛡️・نجاة-ونصائح", "type": "text", "readOnly": false, "topic": "كيف تنجو من الوحوش والمطاردات", "visibleTo": null, "slowmode": 5, "purpose": "general"},
+{"name": "🔊 غرفة الصراخ", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 جلسة رعب جماعية", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 فريق الأشباح", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 قاعة الهمس", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "⚰️ مقبرة الإدارة", "visibleTo": ["👁️ سيّد الظلام","🕯️ حارس الكوابيس","🔦 مرشد الأقبية"], "channels": [
+{"name": "⚰️・سجل-الحراس", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🪦・غرفة-الحراس", "type": "text", "readOnly": false, "topic": "نقاش الإدارة", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🎟️・بلاغات-من-الظلال", "type": "text", "readOnly": false, "topic": "بلاغات الأعضاء والتذاكر", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع الحراس", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) ضع تحذير spoiler أو محتوى مخيف على أي لقطة عنيفة أو مفزعة قبل نشرها.",
+"2) ممنوع حرق نهايات ألعاب الرعب خارج قناة النظريات إلا داخل وسم السبويلر.",
+"3) لا تستخدم أصواتاً عالية أو صراخاً متعمداً لإزعاج غيرك في الغرف العامة.",
+"4) ممنوع نشر صور دموية حقيقية أو محتوى يحرّض على إيذاء النفس تحت أي مسمى.",
+"5) احترم من يخاف بسهولة؛ السخرية من الخائفين ممنوعة.",
+"6) انشر كل لعبة في قناتها المخصصة ولا تخلط الأحاديث.",
+"7) الجلسات الجماعية تُحجز بالاتفاق المسبق ولا يُطرد أحد من الغرفة دون سبب.",
+"8) حسابات التجربة المقرصنة وروابط التحميل المخالفة ممنوعة تماماً."
+],
+"welcome": "أهلاً بك في القبو يا {user}! 🎃 اختر نوع رعبك من قناة الاختيار، واقرأ الميثاق، ثم انضم إلى غرفة الصراخ. احذر من الباب الأخير.",
+"goodbye": "غادر {user} القبو... أو ربما ما زال يراقبنا من الظلام. نتمنى أن تعود لجلسة رعب جديدة. 🕯️",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام رتب تلقائية", "نظام فعاليات"],
+"protection": ["مستوى التحقق: متوسط", "فلتر المحتوى الصريح: تفعيل لكل الأعضاء", "منع الروابط للرتب الأدنى من ناجٍ", "تنبيه تلقائي عند كلمات العنف المفرط"],
+"instructions": "بعد التطبيق أنشئ رسالة تفاعل في قناة اختر-نوع-رعبك لمنح الرتب، ثبّت الميثاق، واضبط قناة بلاغات-من-الظلال لتصلها بلاغات الأعضاء. نظّم ليلة رعب أسبوعية عبر نظام الفعاليات."
+},
+{
+"id": 22,
+"name": "سيرفر ألعاب البقاء",
+"category": "الألعاب والقيمنق",
+"icon": "🏕️",
+"colors": ["#14532d", "#0b0f0a"],
+"description": "مجتمع للاعبي ألعاب البقاء: بناء القواعد، جمع الموارد، تنسيق الغارات وتبادل الخرائط وطرق النجاة.",
+"roles": [
+{"name": "🧭 قائد المعسكر", "color": "#f59e0b", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🪓 حارس المحيط", "color": "#16a34a", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "🔥 مشرف المخيم", "color": "#ef4444", "hoist": true, "permissions": ["ManageMessages","ModerateMembers","ManageThreads","ManageEvents"]},
+{"name": "⛏️ صانع ماهر", "color": "#0ea5e9", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","PrioritySpeaker"]},
+{"name": "🏹 صياد", "color": "#a16207", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "🌲 ناجٍ جديد", "color": "#6b7280", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🏕️ المعسكر الرئيسي", "visibleTo": null, "channels": [
+{"name": "🏕️・استقبال-المعسكر", "type": "text", "readOnly": true, "topic": "رحّب بالناجين الجدد", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📋・دستور-البقاء", "type": "text", "readOnly": true, "topic": "قواعد المعسكر", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📣・أخبار-السيرفرات-والتحديثات", "type": "text", "readOnly": true, "topic": "تحديثات الألعاب وإعلانات الوايب", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🎒・اختر-لعبتك", "type": "text", "readOnly": true, "topic": "رتب الألعاب: Rust، ARK، The Forest، Valheim", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🛠️ ورشة النجاة", "visibleTo": null, "channels": [
+{"name": "🪵・جمع-الموارد-والمزارع", "type": "text", "readOnly": false, "topic": "أفضل طرق الفارمنج", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏠・تصاميم-القواعد", "type": "text", "readOnly": false, "topic": "صور ومخططات للقواعد المحصنة", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🧪・وصفات-الصناعة", "type": "text", "readOnly": false, "topic": "الحرف والوصفات والـ blueprints", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🗺️・خرائط-ومواقع-مهمة", "type": "text", "readOnly": false, "topic": "مواقع الموارد والكهوف", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🐺・ترويض-ومواجهة-الوحوش", "type": "text", "readOnly": false, "topic": "الترويض والبوسات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "💡・أفكار-لتطوير-المعسكر", "type": "text", "readOnly": false, "topic": "اقتراحاتكم لتحسين المجتمع", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"}
+]},
+{"name": "⚔️ غرف العمليات", "visibleTo": null, "channels": [
+{"name": "🤝・البحث-عن-قبيلة", "type": "text", "readOnly": false, "topic": "ابحث عن فريق أو قبيلة", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💥・تنسيق-الغارات", "type": "text", "readOnly": false, "topic": "جدولة الغارات والدفاع", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🔦・ثرثرة-الناجين", "type": "text", "readOnly": false, "topic": "حديث عام عن اللعب", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 مخيم القبيلة الأولى", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 مخيم القبيلة الثانية", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة الغارة", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 حول نار المخيم", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🪖 قيادة المعسكر", "visibleTo": ["🧭 قائد المعسكر","🪓 حارس المحيط","🔥 مشرف المخيم"], "channels": [
+{"name": "📒・سجل-الحراس", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🧯・بلاغات-الغش", "type": "text", "readOnly": false, "topic": "بلاغات المخالفات والغش", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🪖・خيمة-القيادة", "type": "text", "readOnly": false, "topic": "نقاش الإدارة", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 مجلس القيادة", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) الغش واستخدام الهاكات وثغرات اللعبة ممنوع، والبلاغ عنه يتم عبر قناة بلاغات-الغش.",
+"2) لا تنشر إحداثيات قواعد أعضاء آخرين دون إذنهم.",
+"3) تنسيق الغارات يتم في قناته فقط ولا يجوز تجنيد أعضاء المجتمع ضد قبيلة أخرى بالإساءة.",
+"4) الاتفاقيات بين القبائل مسؤولية أصحابها والإدارة لا تتدخل في خسائر اللعب.",
+"5) لا تعلن عن سيرفرات خاصة أو مدفوعة بدون موافقة الإدارة.",
+"6) ممنوع تبادل الحسابات أو بيعها داخل المعسكر.",
+"7) احترم من يتعلم؛ ساعد الناجي الجديد قبل أن تسخر منه.",
+"8) صور التصاميم والقواعد تُنشر في قناتها وليس في الشات العام."
+],
+"welcome": "حياك في المعسكر يا {user}! 🏕️ اختر لعبتك من قناة اختر-لعبتك، اقرأ دستور البقاء، وابحث عن قبيلة تحميك. المورد الأول علينا.",
+"goodbye": "غادر {user} المعسكر، نتمنى لك نجاة طويلة وقاعدة لا تُغار عليها. الباب مفتوح دائماً. 🔥",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام فعاليات", "نظام رتب تلقائية"],
+"protection": ["مستوى التحقق: متوسط", "فلتر المحتوى: تفعيل للأعضاء بلا رتب", "منع روابط الدعوات الخارجية", "حد إرسال الصور للأعضاء الجدد لأول 10 دقائق"],
+"instructions": "ضع رسالة تفاعلية في قناة اختر-لعبتك لمنح رتب الألعاب، وأنشئ فعالية أسبوعية لغارة جماعية. اجعل قناة بلاغات-الغش مرتبطة ببوت التذاكر لتصل للحراس فقط."
+},
+{
+"id": 23,
+"name": "سيرفر ألعاب العالم المفتوح",
+"category": "الألعاب والقيمنق",
+"icon": "🗺️",
+"colors": ["#1e3a8a", "#0a0a14"],
+"description": "مجتمع لمستكشفي العوالم المفتوحة: رحلات استكشاف، صور وضع التصوير، حلول المهام الجانبية وتوصيات لأجمل العوالم.",
+"roles": [
+{"name": "🧭 قبطان الاستكشاف", "color": "#facc15", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🗝️ حارس الخرائط", "color": "#38bdf8", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","ViewAuditLog"]},
+{"name": "📜 كاتب الدليل", "color": "#34d399", "hoist": true, "permissions": ["ManageMessages","ManageThreads","ManageEvents","ModerateMembers"]},
+{"name": "🏔️ متسلق القمم", "color": "#a78bfa", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🐎 فارس الأفق", "color": "#fb923c", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "🥾 رحالة", "color": "#78716c", "hoist": false, "permissions": ["AttachFiles"]},
+{"name": "🎒 مسافر جديد", "color": "#9ca3af", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🌅 نقطة الانطلاق", "visibleTo": null, "channels": [
+{"name": "🌅・محطة-الوصول", "type": "text", "readOnly": true, "topic": "ابدأ رحلتك هنا", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📖・دليل-المسافر", "type": "text", "readOnly": true, "topic": "قواعد الرحلة", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "🗞️・أخبار-العوالم", "type": "text", "readOnly": true, "topic": "إصدارات وتوسعات العوالم المفتوحة", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🎯・رتب-العوالم", "type": "text", "readOnly": true, "topic": "اختر لعبتك: Elden Ring، Zelda، Red Dead، Skyrim", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🌍 العوالم", "visibleTo": null, "channels": [
+{"name": "⚔️・إلدن-رينغ-والسولز", "type": "text", "readOnly": false, "topic": "البوسات والبيلدات والخريطة", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🤠・ريد-ديد-والغرب", "type": "text", "readOnly": false, "topic": "رحلات الغرب الأمريكي", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🐉・سكايريم-ومودات-الفانتازيا", "type": "text", "readOnly": false, "topic": "المودات وحزم الجرافيك", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🍃・زيلدا-وعالم-هايرول", "type": "text", "readOnly": false, "topic": "ألغاز المعابد والكوروك", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🌆・ويتشر-وسايبربانك", "type": "text", "readOnly": false, "topic": "قرارات القصة والمهام", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🧩・المهام-الجانبية-والأسرار", "type": "text", "readOnly": false, "topic": "أسرار مخفية وإنجازات", "visibleTo": null, "slowmode": 3, "purpose": null}
+]},
+{"name": "📸 معرض الرحلات", "visibleTo": null, "channels": [
+{"name": "📸・وضع-التصوير", "type": "text", "readOnly": false, "topic": "أجمل لقطات الغروب والمناظر", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🎬・أفلام-قصيرة-داخل-اللعبة", "type": "text", "readOnly": false, "topic": "سينماتك العالم المفتوح", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💡・عالم-نريد-إضافته", "type": "text", "readOnly": false, "topic": "رشّح عالماً أو فعالية", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "🧳・سوالف-الرحالة", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 رحلة جماعية", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 معسكر الاستكشاف", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة البثوث", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🛡️ مركز القيادة", "visibleTo": ["🧭 قبطان الاستكشاف","🗝️ حارس الخرائط","📜 كاتب الدليل"], "channels": [
+{"name": "🧾・سجل-الحراس", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🧑‍💼・نقاش-الطاقم", "type": "text", "readOnly": false, "topic": "نقاش الإدارة", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 اجتماع الطاقم", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) كل ما يخص قصة لعبة يوضع داخل سبويلر، خصوصاً الألعاب الحديثة في أول شهر من صدورها.",
+"2) انشر لقطات الشاشة في وضع التصوير وليس في قنوات الألعاب.",
+"3) لا تطلب مفاتيح تفعيل أو حسابات مقرصنة.",
+"4) المودات تُشارك من مصادرها الرسمية فقط ولا نقبل روابط مجهولة.",
+"5) إذا طلب أحدهم مساعدة في خريطة أو لغز فلا تجبه بحرق الحل الكامل إلا إن طلب ذلك.",
+"6) لا تدعُ لعبة على أخرى؛ النقاش عن أفضل عالم يبقى ودياً.",
+"7) رد الرحلات الجماعية مجدول مسبقاً في قناة الأخبار، لا تحجز الغرف الصوتية دون إعلان.",
+"8) المحتوى غير اللائق في المودات ممنوع بأي صيغة."
+],
+"welcome": "نورت يا {user}! 🗺️ خذ خريطتك من رتب-العوالم واختر لعبتك، ثم شارك أول لقطة من رحلتك في وضع-التصوير.",
+"goodbye": "غادر {user} نقطة الانطلاق باتجاه الأفق. تمنياتنا لك بعوالم لا تنتهي. 🌄",
+"systems": ["نظام اقتراحات", "سجلات الإدارة", "نظام فعاليات", "نظام تصويت", "نظام رتب تلقائية"],
+"protection": ["مستوى التحقق: متوسط", "فلتر المحتوى: تفعيل للجميع", "حد الروابط: للرتب من فارس الأفق فأعلى", "تحديد معدل الرسائل في قنوات اللعب"],
+"instructions": "فعّل رسالة الرتب في قناة رتب-العوالم، وأنشئ فعالية شهرية لمسابقة أجمل صورة، واربط نظام التصويت بقناة وضع-التصوير لاختيار صورة الأسبوع."
+},
+{
+"id": 24,
+"name": "سيرفر ألعاب المحاكاة",
+"category": "الألعاب والقيمنق",
+"icon": "🚜",
+"colors": ["#065f46", "#0a0f14"],
+"description": "مجتمع هواة ألعاب المحاكاة: مزارع وشاحنات وبناء مدن وطيران، مع مشاركة المودات والإعدادات واللقطات الواقعية.",
+"roles": [
+{"name": "🏗️ مدير المشروع", "color": "#fbbf24", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🧰 مهندس الصيانة", "color": "#06b6d4", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","ViewAuditLog"]},
+{"name": "📐 مصمم المودات", "color": "#c084fc", "hoist": true, "permissions": ["ManageMessages","ManageThreads","ManageWebhooks","ManageEvents"]},
+{"name": "🚜 مزارع محترف", "color": "#84cc16", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🏙️ عمدة المدينة", "color": "#f97316", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks"]},
+{"name": "🧑‍🔧 متدرب", "color": "#64748b", "hoist": false, "permissions": ["AttachFiles"]},
+{"name": "🪪 موظف جديد", "color": "#9ca3af", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🏢 المكتب الرئيسي", "visibleTo": null, "channels": [
+{"name": "🏢・استقبال-الموظفين", "type": "text", "readOnly": true, "topic": "أهلاً بك في فريق المحاكاة", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📑・لوائح-العمل", "type": "text", "readOnly": true, "topic": "أنظمة السيرفر", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📰・نشرة-المحاكيات", "type": "text", "readOnly": true, "topic": "تحديثات Farming Simulator وEuro Truck وCities Skylines", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🪪・بطاقات-التخصص", "type": "text", "readOnly": true, "topic": "اختر تخصصك: مزارع، سائق، عمدة، طيار", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🌾 المزارع والشاحنات", "visibleTo": null, "channels": [
+{"name": "🌾・فارمنج-سيميوليتر", "type": "text", "readOnly": false, "topic": "المحاصيل والآلات والخرائط", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🚛・يورو-تراك-وأمريكان-تراك", "type": "text", "readOnly": false, "topic": "الشحنات والطرق والقوافل", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏗️・بناء-المدن", "type": "text", "readOnly": false, "topic": "Cities Skylines وPlanet Zoo", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🔧・ميكانيكي-ومحاكيات-الورش", "type": "text", "readOnly": false, "topic": "Car Mechanic وPowerWash", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🛠️・المودات-والإضافات", "type": "text", "readOnly": false, "topic": "شارك المودات الآمنة", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🧪・إعدادات-الأداء", "type": "text", "readOnly": false, "topic": "تحسين الأداء والإعدادات", "visibleTo": null, "slowmode": 5, "purpose": null}
+]},
+{"name": "🚦 ساحة العمل", "visibleTo": null, "channels": [
+{"name": "🖼️・لقطات-واقعية", "type": "text", "readOnly": false, "topic": "أجمل اللقطات من اللعب", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🎛️・معدات-ودركسيون", "type": "text", "readOnly": false, "topic": "مقود، دواسات، ذراع تحكم", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "💡・اقتراحات-لتحسين-السيرفر", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "☕・استراحة-الموظفين", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 قافلة الشاحنات", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 مزرعة مشتركة", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة بناء المدينة", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 غرفة التشغيل", "visibleTo": ["🏗️ مدير المشروع","🧰 مهندس الصيانة","📐 مصمم المودات"], "channels": [
+{"name": "🗃️・سجل-العمليات", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎫・طلبات-الدعم-الفني", "type": "text", "readOnly": false, "topic": "مشاكل التشغيل والمودات", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع الصيانة", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) المودات تنشر بعد فحص مصدرها، ويُمنع رفع ملفات تنفيذية مشبوهة.",
+"2) في قوافل الشاحنات التزم بقواعد الطريق في اللعبة ولا تتعمد التصادم.",
+"3) ذكر الإعدادات والمواصفات شيء مفيد، لكن لا تسخر من جهاز غيرك.",
+"4) طلبات المساعدة تُكتب مع اسم اللعبة والإصدار ورسالة الخطأ.",
+"5) لا يسمح بالمحتوى السياسي أو الدعائي داخل قنوات المحاكاة.",
+"6) لقطات الشاشة تُنشر في قناتها فقط.",
+"7) بيع المودات المدفوعة يحتاج موافقة مصمم المودات أو الإدارة."
+],
+"welcome": "أهلاً بالموظف الجديد {user}! 🚜 استلم بطاقة تخصصك من بطاقات-التخصص، ثم انضم إلى القافلة أو المزرعة المشتركة.",
+"goodbye": "انتهت مناوبتك يا {user}. نتمنى لك مواسم حصاد وشحنات ناجحة أينما كنت. 🚛",
+"systems": ["نظام تذاكر", "نظام اقتراحات", "سجلات الإدارة", "نظام فعاليات", "نظام رتب تلقائية"],
+"protection": ["مستوى التحقق: متوسط", "فلتر الملفات المشبوهة: تفعيل", "منع روابط التحميل المباشر لغير المصممين", "فلتر المحتوى: للجميع"],
+"instructions": "اربط قناة طلبات-الدعم-الفني بنظام التذاكر، وضع أزرار الرتب في بطاقات-التخصص، وأنشئ فعالية قافلة أسبوعية. ثبّت أول رسالة في قناة المودات بقائمة المصادر الموثوقة."
+},
+{
+"id": 25,
+"name": "سيرفر ألعاب السيارات",
+"category": "الألعاب والقيمنق",
+"icon": "🏎️",
+"colors": ["#7c1d1d", "#0b0b12"],
+"description": "مجتمع لعشاق ألعاب السباقات والسيارات: بطولات، تعديل المركبات، تحديات الزمن وتنسيق المنافسات.",
+"roles": [
+{"name": "🏁 رئيس الحلبة", "color": "#ef4444", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🚦 حكم السباق", "color": "#f59e0b", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "🔧 مهندس الفريق", "color": "#22d3ee", "hoist": true, "permissions": ["ManageMessages","ManageThreads","ManageEvents","ModerateMembers"]},
+{"name": "🏆 بطل الحلبة", "color": "#facc15", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","PrioritySpeaker","Stream"]},
+{"name": "🏎️ سائق محترف", "color": "#a855f7", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "🛞 سائق هاوٍ", "color": "#64748b", "hoist": false, "permissions": ["AttachFiles"]},
+{"name": "🅿️ متفرج", "color": "#94a3b8", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🏁 خط الانطلاق", "visibleTo": null, "channels": [
+{"name": "🏁・خط-الانطلاق", "type": "text", "readOnly": true, "topic": "استقبال السائقين الجدد", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📏・لوائح-الحلبة", "type": "text", "readOnly": true, "topic": "قواعد السباقات والسلوك", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📯・أخبار-البطولات", "type": "text", "readOnly": true, "topic": "مواعيد السباقات والنتائج", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🎮・اختر-منصتك-ولعبتك", "type": "text", "readOnly": true, "topic": "Forza، Gran Turismo، Assetto Corsa، NFS", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🏎️ ألعاب السباقات", "visibleTo": null, "channels": [
+{"name": "🌄・فورزا-هورايزون", "type": "text", "readOnly": false, "topic": "الفعاليات والتيونينج", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏎️・جران-توريزمو", "type": "text", "readOnly": false, "topic": "الحلبات وحفظ الأداء", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🛣️・أسيتو-كورسا-ومحاكاة-واقعية", "type": "text", "readOnly": false, "topic": "إعدادات الفيزياء والمودات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🔥・نيد-فور-سبيد", "type": "text", "readOnly": false, "topic": "المطاردات والكلاسيكيات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "📱・سباقات-الجوال", "type": "text", "readOnly": false, "topic": "Asphalt وCSR وغيرها", "visibleTo": null, "slowmode": 3, "purpose": null}
+]},
+{"name": "🛠️ الورشة", "visibleTo": null, "channels": [
+{"name": "🎨・تصاميم-الطلاء", "type": "text", "readOnly": false, "topic": "الليفريز والتصاميم", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "⚙️・تعديلات-وتيونينج", "type": "text", "readOnly": false, "topic": "سيتب السيارات ومعدلات الأداء", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "⏱️・أرقام-الدورات", "type": "text", "readOnly": false, "topic": "أفضل أزمنة اللفات مع صورة", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💡・أفكار-بطولات-قادمة", "type": "text", "readOnly": false, "topic": "اقترح حلبة أو بطولة", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "🚗・سوالف-السائقين", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 حلبة التجارب", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة السباق الرسمي", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 بِت ستوب", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 غرفة التحكيم", "visibleTo": ["🏁 رئيس الحلبة","🚦 حكم السباق","🔧 مهندس الفريق"], "channels": [
+{"name": "📊・سجل-النتائج-والعقوبات", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🚩・احتجاجات-السائقين", "type": "text", "readOnly": false, "topic": "الاحتجاجات والتذاكر", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع الحكام", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) القيادة النظيفة أولاً: التصادم المتعمد في السباقات الرسمية يؤدي إلى عقوبة زمنية أو استبعاد.",
+"2) أرقام الدورات تُنشر بلقطة شاشة أو فيديو يظهر الزمن بوضوح.",
+"3) الاحتجاجات تُقدم خلال 24 ساعة من السباق عبر قناة الاحتجاجات فقط.",
+"4) المودات المسروقة وملفات الطلاء المنسوخة بلا إذن ممنوعة.",
+"5) لا يسمح بالإعلان عن بيع سيارات أو حسابات داخل قنوات النقاش.",
+"6) لا تفتح غرفة السباق الرسمي إلا بموعد معلن في أخبار البطولات.",
+"7) أي سب للسائقين أو الحكام يعرضك للكتم أو الطرد.",
+"8) نحترم جميع المنصات؛ لا نقاش عدائياً بين مستخدمي الكمبيوتر والكونسول."
+],
+"welcome": "أهلاً بالسائق {user}! 🏁 سجّل منصتك في اختر-منصتك-ولعبتك، وشارك أسرع دورة لك في أرقام-الدورات. الحلبة جاهزة.",
+"goodbye": "{user} غادر الحلبة. نتمنى أن نراه قريباً على خط الانطلاق مرة أخرى. 🏎️",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام فعاليات", "نظام مسابقات"],
+"protection": ["مستوى التحقق: متوسط", "فلتر المحتوى: تفعيل للأعضاء بلا رتب", "قفل روابط التحميل للرتب الأدنى من سائق محترف", "منع الإشارة الجماعية @everyone"],
+"instructions": "جدول أمسية سباق أسبوعية في نظام الفعاليات، واربط قناة احتجاجات-السائقين بالتذاكر. استخدم أرقام-الدورات لتصنيف أسبوعي ومنح رتبة بطل الحلبة لأفضل ثلاثة."
+}
+]

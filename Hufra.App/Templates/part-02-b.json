@@ -1,0 +1,312 @@
+[
+{
+"id": 26,
+"name": "سيرفر ألعاب الطيران",
+"category": "الألعاب والقيمنق",
+"icon": "✈️",
+"colors": ["#0c4a6e", "#07090f"],
+"description": "مجتمع لمحاكاة الطيران والقتال الجوي: رحلات VATSIM، إعدادات الكوكبيت، المعارك الجوية وتنسيق الأسراب.",
+"roles": [
+{"name": "🛫 قائد القاعدة", "color": "#38bdf8", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🗼 مراقب الحركة الجوية", "color": "#f59e0b", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "🎖️ قائد السرب", "color": "#ef4444", "hoist": true, "permissions": ["ManageMessages","ManageEvents","ManageThreads","ModerateMembers","PrioritySpeaker"]},
+{"name": "👨‍✈️ كابتن", "color": "#a78bfa", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream","PrioritySpeaker"]},
+{"name": "🛩️ طيار أول", "color": "#22c55e", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "🎓 طيار متدرب", "color": "#64748b", "hoist": false, "permissions": ["AttachFiles"]},
+{"name": "🎫 راكب", "color": "#9ca3af", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🛫 صالة الاستقبال", "visibleTo": null, "channels": [
+{"name": "🛫・صالة-الوصول", "type": "text", "readOnly": true, "topic": "مرحباً بالركاب الجدد على متن السيرفر", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📘・دليل-الرحلة", "type": "text", "readOnly": true, "topic": "قواعد القاعدة الجوية", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📡・نشرة-الطقس-والتحديثات", "type": "text", "readOnly": true, "topic": "تحديثات المحاكيات والفعاليات", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🧑‍✈️・اختر-محاكيك", "type": "text", "readOnly": true, "topic": "MSFS، X-Plane، DCS، War Thunder", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "✈️ محاكيات الطيران", "visibleTo": null, "channels": [
+{"name": "🌍・مايكروسوفت-فلايت-سيم", "type": "text", "readOnly": false, "topic": "رحلات ومشاهد وإضافات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🛰️・اكس-بلين-وطيارات-معقدة", "type": "text", "readOnly": false, "topic": "الطائرات المعقدة والفيزياء", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🎯・دي-سي-إس-وورلد", "type": "text", "readOnly": false, "topic": "القتال الجوي الواقعي", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "💥・وور-ثاندر-الجو", "type": "text", "readOnly": false, "topic": "المعارك الجوية والأطقم", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🕹️・عتاد-الكوكبيت", "type": "text", "readOnly": false, "topic": "جويستك، رودر، HOTAS، نظارات VR", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🧭・خطط-الرحلات-والمطارات", "type": "text", "readOnly": false, "topic": "مسارات، مطارات، مخططات الاقتراب", "visibleTo": null, "slowmode": 5, "purpose": null}
+]},
+{"name": "🛰️ المحطة الجوية", "visibleTo": null, "channels": [
+{"name": "📷・لقطات-من-السماء", "type": "text", "readOnly": false, "topic": "صور الهبوط والغروب", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🪖・تنظيم-الأسراب", "type": "text", "readOnly": false, "topic": "تشكيل الأسراب والمهام الجماعية", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "💡・أفكار-لتطوير-القاعدة", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "☁️・أحاديث-السحاب", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 برج المراقبة", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 رحلة جماعية", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة السرب الأول", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 قاعة الإحاطة", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 قيادة العمليات", "visibleTo": ["🛫 قائد القاعدة","🗼 مراقب الحركة الجوية","🎖️ قائد السرب"], "channels": [
+{"name": "🗂️・سجل-القاعدة", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "📨・طلبات-الترقية", "type": "text", "readOnly": false, "topic": "طلبات رتب الطيران والتذاكر", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 غرفة العمليات", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) التزم بالاتصال اللاسلكي المختصر والواضح على الغرف الصوتية خلال الرحلات الجماعية.",
+"2) في الرحلات الشبكية الواقعية اتبع تعليمات مراقب الحركة الجوية حرفياً.",
+"3) القتال الجوي في الرحلات المدنية ممنوع إلا في فعاليات معلنة.",
+"4) لا تنشر ملفات إضافات مدفوعة مقرصنة.",
+"5) ساعد المتدربين ولا تسخر من أخطاء الهبوط.",
+"6) الترقية من متدرب إلى طيار تتطلب رحلة تقييم مسجلة.",
+"7) المقاطع التعليمية مرحب بها بشرط ذكر المصدر.",
+"8) أي أسماء رموز عسكرية حقيقية سرية أو معلومات حساسة ممنوعة."
+],
+"welcome": "مرحباً بك على متن الرحلة يا {user}! ✈️ اختر محاكيك من اختر-محاكيك، واقرأ دليل الرحلة، واحجز مقعدك في أقرب رحلة جماعية.",
+"goodbye": "هبط {user} من رحلتنا. نتمنى لك رياحاً مواتية وهبوطاً ناعماً دائماً. 🛬",
+"systems": ["نظام تذاكر", "نظام اقتراحات", "سجلات الإدارة", "نظام فعاليات", "نظام تقديمات"],
+"protection": ["مستوى التحقق: متوسط", "فلتر المحتوى: تفعيل للجميع", "منع روابط التحميل لغير الكابتن", "حد إرسال الملفات للمتدربين"],
+"instructions": "فعّل قناة طلبات-الترقية عبر نظام التذاكر، وأنشئ فعالية أسبوعية لرحلة جماعية، وضع رسالة رتب المحاكيات في اختر-محاكيك. عيّن قائد سرب لكل محاكي رئيسي."
+},
+{
+"id": 27,
+"name": "سيرفر ألعاب الحروب",
+"category": "الألعاب والقيمنق",
+"icon": "⚔️",
+"colors": ["#450a0a", "#0a0a0a"],
+"description": "مجتمع لألعاب الحروب والمعارك الكبرى: Battlefield، Hell Let Loose، Total War، تنسيق الفصائل والمعارك الجماعية.",
+"roles": [
+{"name": "🎖️ القائد الأعلى", "color": "#dc2626", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🪖 جنرال", "color": "#f97316", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "📯 ضابط عمليات", "color": "#eab308", "hoist": true, "permissions": ["ManageMessages","ManageEvents","ModerateMembers","PrioritySpeaker"]},
+{"name": "🛡️ قائد فصيلة", "color": "#3b82f6", "hoist": false, "permissions": ["CreatePublicThreads","PrioritySpeaker","MoveMembers","AttachFiles"]},
+{"name": "🔫 جندي مقاتل", "color": "#22c55e", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "🥾 مجنّد", "color": "#78716c", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🏴 مقر القيادة", "visibleTo": null, "channels": [
+{"name": "🏴・مكتب-التجنيد", "type": "text", "readOnly": true, "topic": "أهلاً بالمجندين الجدد", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📜・لوائح-الجيش", "type": "text", "readOnly": true, "topic": "قواعد الانضباط", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📢・بيانات-الجبهة", "type": "text", "readOnly": true, "topic": "إعلانات المعارك والتحديثات", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🪙・اختر-جبهتك", "type": "text", "readOnly": true, "topic": "رتب الألعاب: Battlefield، HLL، Total War، Foxhole", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🌍 جبهات القتال", "visibleTo": null, "channels": [
+{"name": "💣・باتلفيلد-وساحات-المعركة", "type": "text", "readOnly": false, "topic": "الفئات والخرائط والمعارك", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🪖・هيل-ليت-لوس", "type": "text", "readOnly": false, "topic": "أدوار القوات والتنسيق", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🏰・توتال-وور", "type": "text", "readOnly": false, "topic": "حملات وجيوش", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🚁・فوكسهول-وحروب-الموارد", "type": "text", "readOnly": false, "topic": "الإمداد والخطوط الخلفية", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🎯・أسلحة-وبناءات", "type": "text", "readOnly": false, "topic": "تجهيزات الأسلحة", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🗺️・خرائط-وتكتيكات", "type": "text", "readOnly": false, "topic": "تحليل الخرائط", "visibleTo": null, "slowmode": 5, "purpose": null}
+]},
+{"name": "🪖 ثكنات الفصائل", "visibleTo": null, "channels": [
+{"name": "🤝・البحث-عن-فصيلة", "type": "text", "readOnly": false, "topic": "تجنيد وانضمام", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🎥・أبرز-لقطات-المعارك", "type": "text", "readOnly": false, "topic": "مقاطع الانتصارات", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💡・مقترحات-للقيادة", "type": "text", "readOnly": false, "topic": "اقتراحات للجيش", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "🍖・مطبخ-الميدان", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 فصيلة ألفا", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 فصيلة براڤو", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة القيادة الميدانية", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 استراحة الجنود", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 غرفة الحرب", "visibleTo": ["🎖️ القائد الأعلى","🪖 جنرال","📯 ضابط عمليات"], "channels": [
+{"name": "🗃️・سجل-الأركان", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎫・طلبات-الانضمام-والاستئناف", "type": "text", "readOnly": false, "topic": "تذاكر الجنود", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 مجلس الحرب", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) الانضباط داخل الفصائل: أوامر قائد الفصيلة ملزمة أثناء المعركة المعلنة.",
+"2) قتل الزملاء المتعمد (TK) ممنوع، والتخريب على فصيلتك يؤدي إلى الطرد.",
+"3) الحرب في اللعبة لا تعني الإساءة؛ لا تسب اللاعبين من فصائل أخرى.",
+"4) ممنوع تمجيد أو تقليد أي ممارسات أو رموز حقيقية للعنف والتطرف.",
+"5) المحتوى الواقعي الدموي يُمنع، ويقتصر الأمر على لقطات من الألعاب.",
+"6) لا تعلن عن بيع حسابات أو مفاتيح داخل الفصائل.",
+"7) التقديم على فصيلة يتم عبر قناة البحث عن فصيلة بتعريف مختصر.",
+"8) أي غش أو مساعدة غير عادلة تؤدي إلى حظر فوري."
+],
+"welcome": "تم تجنيدك يا {user}! 🪖 اختر جبهتك من اختر-جبهتك، قدّم نفسك في البحث-عن-فصيلة، وانضم إلى الغرف الصوتية في أقرب معركة.",
+"goodbye": "سُرّح {user} من الخدمة. شكراً على شجاعتك في الميدان، الباب مفتوح للعودة. 🎖️",
+"systems": ["نظام تذاكر", "نظام اقتراحات", "سجلات الإدارة", "نظام تقديمات", "نظام فعاليات"],
+"protection": ["مستوى التحقق: عالٍ", "فلتر المحتوى: تفعيل للجميع", "منع الدعوات الخارجية", "منع الإشارة الجماعية لغير القيادة"],
+"instructions": "اربط قناة طلبات-الانضمام-والاستئناف بنظام التذاكر، وحدد قادة الفصائل بإعطائهم رتبة قائد فصيلة. أطلق معركة أسبوعية عبر الفعاليات مع إعلان في بيانات-الجبهة."
+},
+{
+"id": 28,
+"name": "سيرفر ألعاب الاستراتيجية",
+"category": "الألعاب والقيمنق",
+"icon": "♟️",
+"colors": ["#4c1d95", "#08060f"],
+"description": "مجتمع لعشاق الاستراتيجية: RTS وTBS و4X، تحليل البنيات، ترتيبات التحالفات والمباريات الودية والبطولات.",
+"roles": [
+{"name": "👑 الإمبراطور", "color": "#fbbf24", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🏛️ مستشار الإمبراطورية", "color": "#a78bfa", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","ViewAuditLog"]},
+{"name": "📜 مؤرخ ومحلل", "color": "#34d399", "hoist": true, "permissions": ["ManageMessages","ManageThreads","ManageEvents","ModerateMembers"]},
+{"name": "🧠 استراتيجي بارع", "color": "#f87171", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🛡️ قائد جيش", "color": "#60a5fa", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "🌾 مزارع المملكة", "color": "#a3a3a3", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "🏰 قاعة العرش", "visibleTo": null, "channels": [
+{"name": "🏰・بوابة-المملكة", "type": "text", "readOnly": true, "topic": "رحّب بالقادة الجدد", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📜・مرسوم-الإمبراطورية", "type": "text", "readOnly": true, "topic": "قواعد المملكة", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📯・نداء-الحضارات", "type": "text", "readOnly": true, "topic": "إعلانات البطولات وتحديثات الألعاب", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🪙・اختر-حضارتك", "type": "text", "readOnly": true, "topic": "رتب الألعاب: AoE، Civ، StarCraft، Stellaris", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🗺️ ساحة المعارك", "visibleTo": null, "channels": [
+{"name": "🏯・إيج-أوف-إمباير", "type": "text", "readOnly": false, "topic": "التحليلات وبناء القرى", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🌐・سيفيليزيشن", "type": "text", "readOnly": false, "topic": "حضارات وانتصارات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "👽・ستاركرافت-وعوالم-الفضاء", "type": "text", "readOnly": false, "topic": "البنيات والمواجهات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "⚙️・هيرتس-أوف-آيرون-وستيليس", "type": "text", "readOnly": false, "topic": "الحرب الكبرى والإدارة", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "📱・استراتيجية-الجوال", "type": "text", "readOnly": false, "topic": "Clash وRise of Kingdoms وغيرها", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🧮・حسابات-وبنيات-مثالية", "type": "text", "readOnly": false, "topic": "build orders وتحليل رقمي", "visibleTo": null, "slowmode": 5, "purpose": null}
+]},
+{"name": "♟️ مجلس الحرب", "visibleTo": null, "channels": [
+{"name": "🤝・تحالفات-ومباريات-ودية", "type": "text", "readOnly": false, "topic": "إيجاد خصوم وحلفاء", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🏆・بطولات-المملكة", "type": "text", "readOnly": false, "topic": "جداول البطولات والنتائج", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "💡・مقترحات-للمجلس", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "🍷・مجلس-الأحاديث", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 قاعة المعارك", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة التحالفات", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 مضمار التدريب", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 الديوان الملكي", "visibleTo": ["👑 الإمبراطور","🏛️ مستشار الإمبراطورية","📜 مؤرخ ومحلل"], "channels": [
+{"name": "📚・سجل-الديوان", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🪬・طلبات-الانضمام-للبطولات", "type": "text", "readOnly": false, "topic": "تذاكر وتقديمات", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 مجلس المستشارين", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) الاحترام بين الخصوم: التفوق في اللعب لا يبرر الاستهزاء بالخاسر.",
+"2) لا تنشر استراتيجيات مبنية على ثغرات أو أخطاء قاتلة في اللعبة.",
+"3) المباريات الودية تُحسم باللعب لا بالجدال؛ قرارات حكم البطولة نهائية.",
+"4) الاستراتيجيات والـ build orders تُنشر في قنواتها بوضوح مع اسم اللعبة والإصدار.",
+"5) لا نقبل الإعلانات التجارية أو الترويج لسيرفرات أخرى.",
+"6) حسابات الغش وبرامج الرؤية الكاملة تعني حظراً دائماً.",
+"7) سبويلر حملات القصة يوضع داخل وسم السبويلر.",
+"8) انتحال هوية لاعب أو قائد ممنوع."
+],
+"welcome": "أهلاً بالقائد {user}! ♟️ اختر حضارتك من اختر-حضارتك، اطّلع على مرسوم الإمبراطورية، ثم أعلن عن رغبتك في مباراة ودية.",
+"goodbye": "ترك {user} المملكة. نتمنى أن تسقط مدنك بعيداً عن حروبنا! 🏰",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام تقديمات", "نظام مسابقات"],
+"protection": ["مستوى التحقق: متوسط", "فلتر المحتوى: تفعيل للجميع", "منع روابط الدعوات", "قفل إرسال الملفات على الرتبة الأدنى"],
+"instructions": "ضع رسالة تفاعل لرتب الألعاب في اختر-حضارتك، وأنشئ بطولة أسبوعية في نظام المسابقات، وربط قناة طلبات-الانضمام-للبطولات بنظام التذاكر لتأكيد التسجيل."
+},
+{
+"id": 29,
+"name": "سيرفر ألعاب الهواتف",
+"category": "الألعاب والقيمنق",
+"icon": "📱",
+"colors": ["#5b21b6", "#0c0a1a"],
+"description": "مجتمع لاعبي الجوال: ببجي موبايل، Free Fire، Clash وغيرها، مع فرق وحروب قبائل وعروض شحن آمنة.",
+"roles": [
+{"name": "📱 مؤسس الهواتف", "color": "#8b5cf6", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🛠️ مشرف الجوال", "color": "#06b6d4", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","MoveMembers","MuteMembers","ViewAuditLog"]},
+{"name": "🎯 مدير الأسر", "color": "#f97316", "hoist": true, "permissions": ["ManageMessages","ManageEvents","ModerateMembers","ManageThreads"]},
+{"name": "📶 لاعب نجم", "color": "#ec4899", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🔋 لاعب نشط", "color": "#22c55e", "hoist": false, "permissions": ["AttachFiles","EmbedLinks"]},
+{"name": "📲 مبتدئ", "color": "#9ca3af", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "📲 الشاشة الرئيسية", "visibleTo": null, "channels": [
+{"name": "📲・الدخول", "type": "text", "readOnly": true, "topic": "استقبال لاعبي الجوال", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📋・نظام-السيرفر", "type": "text", "readOnly": true, "topic": "قواعد المجتمع", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "🔔・إشعارات-التحديثات", "type": "text", "readOnly": true, "topic": "تحديثات الألعاب والفعاليات والأكواد", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🎮・اختر-لعبتك-بالجوال", "type": "text", "readOnly": true, "topic": "ببجي، فري فاير، كلاش، موبايل ليجندز", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🎯 ألعاب الجوال", "visibleTo": null, "channels": [
+{"name": "🔫・ببجي-موبايل", "type": "text", "readOnly": false, "topic": "تيم وحساسية وتحديثات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🔥・فري-فاير", "type": "text", "readOnly": false, "topic": "الشخصيات والكلاشات", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "⚔️・كلاش-أوف-كلانس-وكلاش-رويال", "type": "text", "readOnly": false, "topic": "العشائر والحروب", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🧙・موبايل-ليجندز-وهوف-أوف-كينغز", "type": "text", "readOnly": false, "topic": "ألعاب MOBA", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🎲・ألعاب-الجوال-الأخرى", "type": "text", "readOnly": false, "topic": "جينشن ومواقع أخرى", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "⚙️・إعدادات-الأجهزة-والأداء", "type": "text", "readOnly": false, "topic": "إعدادات الهاتف والتبريد", "visibleTo": null, "slowmode": 5, "purpose": null}
+]},
+{"name": "🤝 فرق وأسر", "visibleTo": null, "channels": [
+{"name": "🤝・أبحث-عن-فريق", "type": "text", "readOnly": false, "topic": "انضم أو كوّن فريقاً", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "🏆・بطولات-الجوال", "type": "text", "readOnly": false, "topic": "تسجيل ونتائج", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🎁・أكواد-ومكافآت-مجانية", "type": "text", "readOnly": false, "topic": "أكواد رسمية فقط", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💡・اقتراحات-الجوال", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "📶・سوالف-اللاعبين", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 سكواد 1", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 سكواد 2", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة الأسر", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 لوحة التحكم", "visibleTo": ["📱 مؤسس الهواتف","🛠️ مشرف الجوال","🎯 مدير الأسر"], "channels": [
+{"name": "🧾・سجل-الإدارة-الجوال", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎟️・دعم-الحسابات-والبلاغات", "type": "text", "readOnly": false, "topic": "تذاكر الدعم", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع الإشراف", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) بيع أو شراء الحسابات والشحن عبر طرف ثالث ممنوع في كل القنوات.",
+"2) أكواد المكافآت الرسمية فقط تُنشر في قناة الأكواد ويُمنع نشر روابط الاحتيال.",
+"3) ممنوع نشر برامج هاك أو تعديلات للجوال المخالفة لشروط الألعاب.",
+"4) لا تطلب أو تعطِ معلومات حسابك أو كلمة سرك لأي شخص.",
+"5) انضمام الأسر يتم عبر قناة أبحث-عن-فريق بإعلان مختصر.",
+"6) احترم لاعبي كل الأجهزة، فالأداء يختلف من هاتف لآخر.",
+"7) يمنع التبريد بإعلانات الشركات المجهولة وروابط الشحن المشبوهة.",
+"8) لا تستخدم الألفاظ المسيئة في الصوت أو الكتابة."
+],
+"welcome": "أهلاً بك {user}! 📱 اختر لعبتك من اختر-لعبتك-بالجوال، وابحث عن فريقك أو أسرتك، وحافظ على حسابك بعيداً عن الروابط المشبوهة.",
+"goodbye": "غادر {user} الشاشة الرئيسية. نتمنى أن يبقى شحنك كاملاً وتعود لتلعب معنا. 🔋",
+"systems": ["نظام اقتراحات", "نظام تذاكر", "سجلات الإدارة", "نظام فعاليات", "نظام بلاغات"],
+"protection": ["مستوى التحقق: عالٍ", "فلتر الروابط المشبوهة: تفعيل", "منع إرسال الروابط للمبتدئين", "حظر كلمات الشحن والبيع خارج المتجر"],
+"instructions": "ضع رسالة تفاعل لاختيار رتبة اللعبة، واضبط قناة دعم-الحسابات-والبلاغات على نظام التذاكر. أنشئ فعالية بطولة جوال أسبوعية وأعلنها في إشعارات-التحديثات."
+},
+{
+"id": 30,
+"name": "سيرفر ألعاب الكمبيوتر",
+"category": "الألعاب والقيمنق",
+"icon": "🖥️",
+"colors": ["#312e81", "#050510"],
+"description": "مجتمع لاعبي الـ PC: تجميع الأجهزة، تحسين الأداء، مودات وإعدادات الجرافيك وتجارب الألعاب الثقيلة.",
+"roles": [
+{"name": "🖥️ مدير المنصة", "color": "#6366f1", "hoist": true, "permissions": ["ManageGuild","ManageChannels","ManageRoles","KickMembers","BanMembers","ModerateMembers","ManageMessages","ViewAuditLog","MentionEveryone"]},
+{"name": "🔧 خبير العتاد", "color": "#14b8a6", "hoist": true, "permissions": ["KickMembers","ModerateMembers","ManageMessages","ManageThreads","ViewAuditLog"]},
+{"name": "⚙️ مدير التقنية", "color": "#f59e0b", "hoist": true, "permissions": ["ManageMessages","ManageEvents","ModerateMembers","ManageWebhooks"]},
+{"name": "🚀 مجمّع أجهزة", "color": "#ec4899", "hoist": false, "permissions": ["CreatePublicThreads","AttachFiles","EmbedLinks","Stream"]},
+{"name": "🎮 لاعب RTX", "color": "#22c55e", "hoist": false, "permissions": ["AttachFiles","EmbedLinks","Stream"]},
+{"name": "💻 لاعب لابتوب", "color": "#38bdf8", "hoist": false, "permissions": ["AttachFiles"]},
+{"name": "🧊 مستخدم جديد", "color": "#9ca3af", "hoist": false, "permissions": []}
+],
+"categories": [
+{"name": "⌨️ لوحة البداية", "visibleTo": null, "channels": [
+{"name": "⌨️・الاستقبال", "type": "text", "readOnly": true, "topic": "مرحباً باللاعبين الجدد", "visibleTo": null, "slowmode": 0, "purpose": "welcome"},
+{"name": "📖・نظام-السيرفر-PC", "type": "text", "readOnly": true, "topic": "قواعد المجتمع", "visibleTo": null, "slowmode": 0, "purpose": "rules"},
+{"name": "📡・أخبار-العتاد-والتحديثات", "type": "text", "readOnly": true, "topic": "أخبار كروت الشاشة والمعالجات وتحديثات الألعاب", "visibleTo": null, "slowmode": 0, "purpose": "announcements"},
+{"name": "🧩・اختر-مواصفاتك", "type": "text", "readOnly": true, "topic": "رتب العتاد: RTX، RX، Intel، Ryzen", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔧 ورشة العتاد", "visibleTo": null, "channels": [
+{"name": "🧱・تجميعات-الأجهزة", "type": "text", "readOnly": false, "topic": "مواصفات وتجميعات حسب الميزانية", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🎛️・كروت-الشاشة-والمعالجات", "type": "text", "readOnly": false, "topic": "نقاش القطع", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🌡️・تبريد-وأوفركلوك", "type": "text", "readOnly": false, "topic": "الحرارة والتحسين", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "📊・اختبارات-الأداء", "type": "text", "readOnly": false, "topic": "FPS وبنشمارك", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🛠️・دعم-فني-للأجهزة", "type": "text", "readOnly": false, "topic": "مشاكل التشغيل والشاشة الزرقاء", "visibleTo": null, "slowmode": 5, "purpose": null}
+]},
+{"name": "🎮 ألعاب الـ PC", "visibleTo": null, "channels": [
+{"name": "🎞️・إعدادات-الجرافيك", "type": "text", "readOnly": false, "topic": "أفضل إعدادات وتتبع الأشعة", "visibleTo": null, "slowmode": 3, "purpose": null},
+{"name": "🧬・مودات-الكمبيوتر", "type": "text", "readOnly": false, "topic": "Nexus وWorkshop", "visibleTo": null, "slowmode": 5, "purpose": null},
+{"name": "🆓・عروض-مجانية-رسمية", "type": "text", "readOnly": false, "topic": "ألعاب مجانية من المتاجر الرسمية فقط", "visibleTo": null, "slowmode": 10, "purpose": null},
+{"name": "💡・اقتراحات-للمنصة", "type": "text", "readOnly": false, "topic": "اقتراحاتكم", "visibleTo": null, "slowmode": 30, "purpose": "suggestions"},
+{"name": "☕・استراحة-اللاعبين", "type": "text", "readOnly": false, "topic": "حديث عام", "visibleTo": null, "slowmode": 3, "purpose": "general"},
+{"name": "🔊 جلسة لعب PC", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 ورشة التجميع", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null},
+{"name": "🔊 غرفة البث", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]},
+{"name": "🔒 غرفة الخوادم", "visibleTo": ["🖥️ مدير المنصة","🔧 خبير العتاد","⚙️ مدير التقنية"], "channels": [
+{"name": "🗄️・سجل-النظام", "type": "text", "readOnly": false, "topic": "سجلات الإدارة", "visibleTo": null, "slowmode": 0, "purpose": "logs"},
+{"name": "🎫・تذاكر-الدعم-الفني", "type": "text", "readOnly": false, "topic": "طلبات الدعم", "visibleTo": null, "slowmode": 0, "purpose": "tickets"},
+{"name": "🔊 اجتماع التقنيين", "type": "voice", "readOnly": false, "topic": "", "visibleTo": null, "slowmode": 0, "purpose": null}
+]}
+],
+"rules": [
+"1) عند طلب المساعدة اذكر مواصفات جهازك كاملة ونسخة النظام والمشكلة بوضوح.",
+"2) ممنوع طلب أو مشاركة برامج مقرصنة أو كراكات الألعاب والويندوز.",
+"3) نقاش العتاد يبقى تقنياً؛ حرب Intel مقابل AMD لا تنتهي بالسب.",
+"4) روابط التحميل تكون من المواقع الرسمية فقط، وأي برنامج مجهول يُحذف.",
+"5) لا تنشر أرقام تسلسلية أو مفاتيح تفعيل أو بياناتك الشخصية.",
+"6) نصائح الأوفركلوك على مسؤوليتك الخاصة ولا نتحمل أضراراً.",
+"7) بيع القطع المستعملة يُسمح به في قناة التجميعات بشروط إعلان واضحة من الإدارة.",
+"8) لا للإعلانات لمواقع شراء المفاتيح غير الرسمية."
+],
+"welcome": "مرحباً {user}! 🖥️ سجّل مواصفاتك في اختر-مواصفاتك، وإن واجهت مشكلة فاسأل في دعم-فني-للأجهزة. لا تنسَ قراءة النظام قبل التجميع.",
+"goodbye": "أُغلق جهازك يا {user}. نتمنى لك أداءً مستقراً وحرارة منخفضة دائماً. 🌡️",
+"systems": ["نظام تذاكر", "نظام اقتراحات", "سجلات الإدارة", "نظام رتب تلقائية", "نظام فعاليات"],
+"protection": ["مستوى التحقق: عالٍ", "فلتر الملفات التنفيذية: تفعيل", "منع روابط التحميل المباشر للأعضاء الجدد", "قفل الصور على المستخدم الجديد 10 دقائق"],
+"instructions": "ضع أزرار رتب العتاد في اختر-مواصفاتك، وفعّل بوت التذاكر على قناة تذاكر-الدعم-الفني، وأنشئ فعالية شهرية لمسابقة أفضل تجميعة. فعّل فلتر الملفات المشبوهة لحماية الأعضاء."
+}
+]
