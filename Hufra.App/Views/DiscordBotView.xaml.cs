@@ -98,6 +98,7 @@ namespace Hufra.App.Views
                 await ChooseGuildAsync(login, backend, pickAgain: fresh);
             }
             catch (DiscordApiException ex) { ConnectStatus.Text = "❌ " + ex.Message; }
+            catch (Exception ex) { ConnectStatus.Text = "❌ تعذّر تسجيل الدخول: " + ex.Message + " (تأكد أن المنفذ 53682 غير مستخدم وأن الإنترنت شغال)"; }
             finally { ConnectButton.IsEnabled = true; }
         }
 
