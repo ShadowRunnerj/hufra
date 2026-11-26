@@ -8,7 +8,7 @@ namespace Hufra.App
 {
     public partial class OnboardingWindow : Window
     {
-        public const string DiscordUrl = "https://discord.gg/zcZeDZFwsP";
+        public const string DiscordUrl = "https://discord.gg/dMvxKhB8SX";
         public const string GeminiKeysUrl = "https://aistudio.google.com/api-keys";
 
         public OnboardingWindow()

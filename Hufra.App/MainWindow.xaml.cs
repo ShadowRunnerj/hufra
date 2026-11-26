@@ -26,7 +26,7 @@ namespace Hufra.App
 
         private void SidebarDiscord_Click(object sender, RoutedEventArgs e) =>
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(
-                "https://discord.gg/zcZeDZFwsP") { UseShellExecute = true });
+                "https://discord.gg/dMvxKhB8SX") { UseShellExecute = true });
 
         private UpdateInfo _pendingUpdate;
 

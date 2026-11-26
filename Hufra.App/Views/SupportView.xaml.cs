@@ -14,7 +14,7 @@ namespace Hufra.App.Views
 
         private void Discord_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://discord.gg/zcZeDZFwsP") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://discord.gg/dMvxKhB8SX") { UseShellExecute = true });
         }
     }
 }
